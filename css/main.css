@@ -205,3 +205,76 @@
             font-weight: 700;
             font-style: normal;
           }
+
+          /*WATCH LIST*/
+
+          .WatchListBody{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #784DF4;
+            background-position: center;
+          }
+
+          h12{
+            color: #ffffff;
+            font-size: 24px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+          .movie-card {
+            width: 500px;
+            height: auto;
+            margin: 10px;
+            border: 1px ;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #2c2c3c;
+            color: white;
+            position: relative;
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: auto;
+            background-color: #f8d5d5;
+            object-fit: cover;
+            border: 3px solid #333;
+        }
+
+        .movie-card .info {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 15px;
+          font-size: 0.85rem;
+          text-align: center;
+        }
+
+        .remove-btn {
+            background-color: #c1f700;
+            border: none;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #333;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .details {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            font-size: 0.85rem;
+            color: #ffffff;
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
