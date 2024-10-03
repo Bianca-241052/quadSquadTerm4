@@ -1,0 +1,106 @@
+/* Juliette CSS */
+
+.indivContainer{
+    display: flex;
+    align-items: center;
+    background-color: #232531;
+    padding-top: 3em;
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-bottom: 3em;
+}
+
+.indivContainer img{
+    width: 425px;
+    height: auto;
+}
+
+.movieImg{
+    margin-right: 5em;
+}
+
+.movieText{
+    flex: 1;
+}
+
+.h8{
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.miniText{
+    display: flex;
+    align-items: flex-start;
+}
+
+.h6{
+    width: 150px;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-weight: bold;
+    
+}
+
+.hAPI{
+    width: 38em;
+    color: #e1e1e1;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-weight: 10;
+}
+
+.h6, .hAPI {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+
+.h3{
+    color: #ffffff;
+    font-size: 22px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+.playButton{
+    color: #784DF4;
+}
+
+.playButton img{
+    width: 10px;
+    height: auto;
+}
+
+.playButton {
+    display: inline-flex;
+    align-items: center;
+    background-color: #784DF4;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  .playButton img {
+    width: 12px;
+    height: 15px;
+    margin-right: 10px;
+  }
+  
+  .playButton p.h3 {
+    margin: 0;
+    font-size: inherit;
+  }
