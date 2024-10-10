@@ -115,6 +115,74 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #8c8c8c;
+  padding: 10px 55px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: auto;
+  height: 60px;
+}
+
+.navbar a{
+  text-align: left;
+}
+
+.nav-links a {
+  padding-right: 20px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar .nav-links a.active {
+  font-weight: bold;
+}
+
+.navbar .nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar .nav-icons i {
+  color: white;
+  font-size: 20px;
+}
+
+.navbar .nav-icons .language {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.navIconSearch{
+  width: 15px;
+  height: auto;
+}
+
+.navIconProfile{
+  width: 15px;
+  height: auto; 
+}
+
 /*ANDRE*/
 /*sign in*/
 
