@@ -106,6 +106,7 @@
   }
 
 
+<<<<<<< Updated upstream
   @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 *{
@@ -454,3 +455,101 @@ body {
             font-weight: 300;
             font-style: normal;
         }
+=======
+
+  /*Iwan CSS*/
+
+  .topNav{
+    background-color: #ebe9f8;
+    height: 80px;
+    width: 80%;
+    margin: 0 0 0 7.5%;
+    border-radius: 20px;
+}
+
+.topNav a {
+    height: fit-content;
+    float: left;
+    color: #070606;
+    text-align: center;
+    padding: 15px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    align-items: center;
+    width: 20%;
+}
+
+.topNavRight {
+    display: flex;
+    padding-left: 8%;
+    background-color: #ebe9f8;
+    height: 80px;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.topNavRight a{
+    height: 52px;
+    align-items: center;
+    display:flex;
+    flex: 28%;
+    text-align: center;
+}
+
+.nav-link img{
+    width: 266px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.topNav a:hover {
+    background-color: #F2CD00;
+    color: white;
+    height: 80px;
+    border-radius: 20px;
+}
+
+.topNav a.active {
+    background-color: #DC611E;
+    color: white;
+    height: 50px;
+    border-radius: 20px;
+}
+
+body {
+    background-color: #000000;
+}
+
+.section1{
+    background-color: #000000;    
+    
+}
+
+.flexContainer1{
+    max-height: fit-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+    background-color: #000000;
+}
+
+.flexContainer1 img{
+    width: 413px;
+    height: 732px;
+}
+
+.line{
+    margin: 50px 0px;
+    color: #ebe9f8;
+}
+
+
+>>>>>>> Stashed changes
