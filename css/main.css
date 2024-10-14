@@ -454,3 +454,37 @@ body {
             font-weight: 300;
             font-style: normal;
         }
+
+  /*Iwan CSS*/
+
+.section1{
+    background-color: #000000;    
+    
+}
+
+.flexContainer1{
+    max-height: fit-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+    background-color: #000000;
+}
+
+.flexContainer1 img{
+    width: 413px;
+    height: 732px;
+}
+
+.line{
+    margin: 50px 0px;
+    color: #ebe9f8;
+}
+
+
