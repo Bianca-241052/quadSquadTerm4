@@ -126,8 +126,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: transparent;
-  backdrop-filter: blur(20px);
+  background-color: #23253181;
   padding: 10px 55px;
 }
 
@@ -195,6 +194,86 @@ text-decoration: none;
 }
 
 .navIconProfile{
+  width: 30px;
+  height: auto; 
+  padding-right: 10px;
+}
+
+
+
+.bottemNavbar {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #23253181;
+  padding: 10px 55px;
+}
+
+.bottemNavbar .bottemLogo {
+  display: flex;
+  align-items: center;
+}
+
+.bottemNavbar .bottemLogo img {
+  width: auto;
+  height: 100px;
+  padding-left: 10px;
+}
+
+.bottemNavbar a{
+  text-align: left;
+}
+
+.bottemNav-links a {
+  padding-right: 20px;
+}
+
+.bottemNavbar .bottemNav-links a {
+  color: #ffffff;
+  font-size: 24px;
+   font-family: "Poppins", sans-serif;
+   font-weight: 300;
+   font-style: normal;
+   text-decoration: none;
+}
+
+.bottemNavbar .bottemNav-links a.active {
+  color: #ffffff;
+font-size: 24px;
+ font-family: "Poppins", system-ui;
+font-weight: 700;
+font-style: normal;
+text-decoration: none;
+}
+
+.bottemNavbar .bottemNav-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 10px;
+}
+
+.bottemNavbar .bottemNav-icons i {
+  color: white;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.bottemNavbar .bottemNav-icons .bottemLanguage {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  padding-right: 10px;
+}
+
+.bottemNavIconSearch{
+  width: 30px;
+  height: auto;
+  padding-right: 10px;
+}
+
+.bottemNavIconProfile{
   width: 30px;
   height: auto; 
   padding-right: 10px;
