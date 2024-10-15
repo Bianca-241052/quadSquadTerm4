@@ -516,7 +516,7 @@ text-decoration: none;
             height: auto;
             background-color: #f8d5d5;
             object-fit: cover;
-            border bottom:2px solid rgba(35, 37, 50, 100) ;
+            border-bottom: 2px solid rgba(35, 37, 50, 100) ;
         }
 
         .movie-card .info {
