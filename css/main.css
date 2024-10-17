@@ -113,13 +113,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  width: auto;
+  height: auto;
 }
 
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url(../assets/lodin\ back.jpg) no-repeat;
-  background-position: center;
+
 }
 
 .navbar {
@@ -206,7 +207,7 @@ text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #23253181;
+  background-color: #2325315b;
   padding: 10px 55px;
 }
 
@@ -409,6 +410,8 @@ text-decoration: none;
             min-height: 100vh;
             background: url(../assets/lodin\ back.jpg) no-repeat;
             background-position: center;
+            width: auto;
+            height: a;
           }
     
           .signUpText{
@@ -484,9 +487,11 @@ text-decoration: none;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+        
             background: url(../assets/lodin\ back.jpg) no-repeat;
             background-position: center;
+            height: auto;
+            width: auto;
           }
 
           h12{
