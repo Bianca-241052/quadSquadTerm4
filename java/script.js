@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-const from = document.getElementById('form')
-const username = document.getElementById('username')
-const email = document.getElementById('username')
-const password = document.getElementById('password')
-const confirmPassword = document.getElementById('confirmPassword')
 
 //Juliette
 
@@ -127,4 +120,25 @@ const options = {
   fetchPopularMovies();
   fetchPremiereMovies();
   
->>>>>>> main
+//andre//
+
+//signUp//
+const signUp = () => {
+  var username = document.getElementById("username").value
+  var email = document.getElementById("email").value
+  var password = document.getElementById("password").value
+
+  var user = {
+    username: username,
+    email: email,
+    password: password,
+  }
+//
+  var json = JSON.stringify(user)
+  localStorage.setItem(user, json);
+  console.log("user added");
+
+} 
+ console.log(username)
+  console.log(email)
+  console.log(password)
