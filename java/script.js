@@ -2,7 +2,7 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NjZkOTE4Njk3MTg3MmZhMzNkMTJiMTgxNzJlYWVmOCIsIm5iZiI6MTcyOTUxNTMzMi42MTEwMTIsInN1YiI6IjY3MDNkYjg0MTc0YTFkNTc3Mzc5NWUzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.z-z8fHqgPli4b3T3B5x5vGXAE4VP9akK1OEStlDbp4I'
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMDQ5ZmZlMzI0YzE2MTBhNTQ3YTNkZjM1MGYwMzQ5YyIsIm5iZiI6MTcyOTUxODYyNS4yNDA3OCwic3ViIjoiNjcwM2RiODQxNzRhMWQ1NzczNzk1ZTMwIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.tOd4VXs8hjRjVXXXAFvrPLyD1_RToPDd27IQvrOxa14'
   }
 };
 
@@ -66,12 +66,18 @@ const fetchTopRatedMovies = async () => {
   await fetchMovies(url, 'Top-Rated');
 };
 
+// Updated genres array with additional genres: Drama, Fantasy, Horror, Sci-Fi, Thriller
 const genres = [
   { id: 28, name: 'Action' },
   { id: 12, name: 'Adventure' },
   { id: 16, name: 'Animation' },
   { id: 99, name: 'Biography (Documentary)' },
   { id: 80, name: 'Crime' },
+  { id: 18, name: 'Drama' },       // Drama
+  { id: 14, name: 'Fantasy' },     // Fantasy
+  { id: 27, name: 'Horror' },      // Horror
+  { id: 878, name: 'Sci-Fi' },     // Sci-Fi
+  { id: 53, name: 'Thriller' },    // Thriller
   { id: 99, name: 'Documentary' }
 ];
 
@@ -97,11 +103,13 @@ const fetchPremiereMovies = async () => {
   await fetchMovies(url, 'Premiere');
 };
 
+// Start fetching movies for all categories
 fetchUpcomingMovies();
 fetchTopRatedMovies();
 fetchTrendingMovies();
 fetchPopularMovies();
 fetchPremiereMovies();
+
 
 
 
