@@ -1,1 +1,124 @@
-<!-- Dis Bianca se page -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quad squad</title>
+
+    <!-- Download the Poppins Font from Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <script src="../java/movieApi.js"></script>
+
+    <link href="../css/main.css" rel="stylesheet">
+    <style>
+        .trend-button-group button.active {
+            background-color: #6c757d;
+            color: white;
+        }
+        .movie-cards-row {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <div class="header d-flex justify-content-between align-items-center">
+        <nav class="nav">
+            <div class="logo">
+                <img src="../assets/miniLogo.png" alt="Movie Logo" style="height: 92px;">
+            </div>
+            <a class="nav-link text-white" href="#">Home</a>
+            <a class="nav-link text-white" href="#">Library</a>
+            <a class="nav-link text-white" href="#">Watch list</a>
+        </nav>
+        <div class="user-options">
+            <div class="logo">
+                <img src="../assets/searchIcon.png" alt="Search Icon" style="height: 40px;">
+            </div>
+            <a class="text-white me-3" href="#">ENG</a>
+            <div class="logo">
+                <img src="../assets/profileIcon.png" alt="Profile Icon" style="height: 40px;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Movie Slides -->
+    <div class="main-container fluid-container">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators"></div>
+            <div class="carousel-inner"></div>
+            <button id="toggleCarousel" class="btn"><img id="toggleIcon" class="toggle-icon" src="../assets/PauseButton.svg" /></button>
+        </div>
+
+        <!-- Select a Trend -->
+        <div class="d-flex justify-content-around mb-4 trend-button-group">
+            <button id="popularButton" class="trend-button" onclick="toggleCategory('popular')">Popular</button>
+            <button id="inTheatresButton" class="trend-button" onclick="toggleCategory('inTheatres')">In Theatres</button>
+            <button id="topRatedButton" class="trend-button" onclick="toggleCategory('topRated')">Top Rated</button>
+            <button id="upcomingButton" class="trend-button" onclick="toggleCategory('upcoming')">Upcoming</button>
+        </div>
+
+        <!-- Categories -->
+        <div class="categories-container d-flex justify-content-between mb-4 ml-5 mr-5">
+            <button class="category-button">Action</button>
+            <button class="category-button">Adventure</button>
+            <button class="category-button">Animation</button>
+            <button class="category-button">Biography</button>
+            <button class="category-button">Crime</button>
+            <button class="category-button">Documentary</button>
+        </div>
+
+        <!-- Select a Movie -->
+        <div class="container-fluid mt-5">
+            <div id="movieCardsRow" class="row">
+                <!-- Movie Cards will be dynamically generated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../java/home.js"></script>
+    <script>
+        function toggleCategory(category) {
+            const trendButtons = document.querySelectorAll('.trend-button');
+            trendButtons.forEach(button => button.classList.remove('active'));
+
+            const buttonId = category + 'Button';
+            document.getElementById(buttonId).classList.add('active');
+
+            const movieCardsRow = document.getElementById('movieCardsRow');
+            movieCardsRow.innerHTML = ''; // Clear previous cards
+
+            switch (category) {
+                case 'popular':
+                    window.fetchPopularMovies().then(movies => addMoviesToRow(movies));
+                    break;
+                case 'inTheatres':
+                    window.fetchPremiereMovies().then(movies => addMoviesToRow(movies));
+                    break;
+                case 'topRated':
+                    window.fetchTopRatedMovies().then(movies => addMoviesToRow(movies));
+                    break;
+                case 'upcoming':
+                    window.fetchUpcomingMovies().then(movies => addMoviesToRow(movies));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function addMoviesToRow(movies) {
+            const movieCardsRow = document.getElementById('movieCardsRow');
+            movies.forEach(movie => {
+                const newMovieCard = createMovieCard(movie);
+                movieCardsRow.appendChild(newMovieCard);
+            });
+        }
+    </script>
+</body>
+</html>
