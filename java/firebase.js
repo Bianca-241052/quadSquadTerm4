@@ -49,7 +49,7 @@ signUp.addEventListener('click', (event) =>{
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
-            window.location.href='../html/home.html'
+            window.location.href='../html/WatchList.html' //change to home.html
         })
         .catch((error)=>{
             console.error("error writing document", error);
@@ -78,7 +78,7 @@ signIn.addEventListener('click', (event)=>{
        showMessage('login is successful', 'signInMessage');
        const user=userCredential.user;
        localStorage.setItem('loggedInUserId', user.uid);
-       window.location.href='../html/home.html';
+       window.location.href='../html/WatchList.html';  //change to home.html
    })
    .catch((error)=>{
     const errorCode=error.code;
