@@ -294,7 +294,7 @@
 .form-cotainer{
     display: flex;
     width: 450px;
-    height: 700px;
+    height: 600px;
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 30px;
     backdrop-filter: blur(20px);
@@ -335,12 +335,7 @@
     opacity: 0.85;
 }
 
-.btn-box .btn-2{
-  background: #21264D;
-}
-.btn-2:hover{
-  opacity: 0.85;
-}
+
 
 .form-box{
     position: absolute;
