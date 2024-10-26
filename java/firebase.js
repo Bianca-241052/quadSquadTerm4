@@ -28,43 +28,54 @@
     },5000);
  }
  //register
-const signUp = document.getElementById('submit-signUp-btn');
-signUp.addEventListener('click', (event) =>{
-    event.preventDefault();
-    const email = document.getElementById('rEmail').value;
-    const password = document.getElementById('registerPassword').value;
-    const username = document.getElementById('rUsername').value;
-
-    const auth=getAuth();
-    const db=getFirestore();
-
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential)=>{
-        const user=userCredential.user;
-        const userData={
-            email: email,
-            username: username,
-        };
-        showMessage('Account Created Successfully', 'signUpMessage');
-        const docRef=doc(db, "users", user.uid);
-        setDoc(docRef,userData)
-        .then(()=>{
-            window.location.href='../html/WatchList.html' //change to home.html
-        })
-        .catch((error)=>{
-            console.error("error writing document", error);
-    });
-})
-.catch((error)=>{
-    const errorCode=error.code;
-    if(errorCode=='auth/email-already-in-use'){
-        showMessage('Email Address Already Exists !!!', 'signUpMessage');
-    }
-    else{
-        showMessage('unable to create User', 'signUpMessage');
-    }
-})
-});
+ const signUp = document.getElementById('submit-signUp-btn');
+ signUp.addEventListener('click', (event) => {
+     event.preventDefault();
+     const email = document.getElementById('rEmail').value;
+     const password = document.getElementById('registerPassword').value;
+     const username = document.getElementById('rUsername').value;
+ 
+     const auth = getAuth();
+     const db = getFirestore();
+ 
+     // Password length validation
+     if (password.length < 8) {
+         showMessage('Password must be at least 8 characters long', 'signUpMessage');
+         return; // Exit the function if the password is too short
+     }
+ 
+     if (password.length > 12) {
+         showMessage('Password must be less than 12 characters long', 'signUpMessage');
+         return; // Exit the function if the password is too long
+     }
+ 
+     createUserWithEmailAndPassword(auth, email, password)
+     .then((userCredential) => {
+         const user = userCredential.user;
+         const userData = {
+             email: email,
+             username: username,
+         };
+         showMessage('Account Created Successfully', 'signUpMessage');
+         
+         const docRef = doc(db, "users", user.uid);
+         setDoc(docRef, userData)
+         .then(() => {
+             window.location.href = '../html/home.html';
+         })
+         .catch((error) => {
+             console.error("Error writing document", error);
+         });
+     })
+     .catch((error) => {
+         const errorCode = error.code;
+         if (errorCode == 'auth/email-already-in-use') {
+             showMessage('Email Address Already Exists !!!', 'signUpMessage');
+         } else {
+             showMessage('Unable to create User', 'signUpMessage');
+         }
+     });
+ });
 
 const signIn=document.getElementById('submit-signIn-btn');
 signIn.addEventListener('click', (event)=>{

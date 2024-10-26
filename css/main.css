@@ -294,7 +294,7 @@
 .form-cotainer{
     display: flex;
     width: 450px;
-    height: 600px;
+    height: 700px;
     border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 30px;
     backdrop-filter: blur(20px);
@@ -333,6 +333,13 @@
 }
 .btn-1:hover{
     opacity: 0.85;
+}
+
+.btn-box .btn-2{
+  background: #21264D;
+}
+.btn-2:hover{
+  opacity: 0.85;
 }
 
 .form-box{
@@ -396,6 +403,41 @@
     backdrop-filter: blur(20px);
 }
 
+.input-box2{
+    position: relative;
+}
+
+.inputs2{
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-field2{
+    font-size: 16px;
+    font-family: "poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0 40px 0 20px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    backdrop-filter: blur(20px);
+}
+
+.input-box2 .icon2{
+    position: absolute;
+    top:50%;
+    right: 20px;
+    transform: translateY(-50%);
+    color: #fff;
+    width: 20px;
+    height: 20px;
+}
+
 ::placeholder{
     color: #fff;
     font-size: 16px;
@@ -410,16 +452,6 @@
     transform: translateY(-50%);
     color: #fff;
     width: 20px;
-    height: 20px;
-}
-
-.strenght-bar{
-    position: absolute;
-    top: 82%;
-    right: 16%;
-    transform: translateY(-50%);
-    color: #fff;
-    width: 300px;
     height: 20px;
 }
 
@@ -523,6 +555,7 @@ background: #333d88;
             font-weight: 300;
             font-style: normal;
         }
+
 
        /* MovieList CSS */
 
