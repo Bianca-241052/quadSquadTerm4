@@ -1,4 +1,27 @@
 /**
+    The home.js file provides JavaScript functionality to be used for the Home.html page of a movie streaming application. 
+    It includes several functions that interact with the Movie API to load movie data dynamically and update the UI.
+    Specifically, it creates carousel items and movie cards based on categories like 'Popular', 'In Theatres', 'Top Rated', and 'Upcoming'. 
+    The script handles category switching, toggling play/pause functionality for the carousel, and ensures the movie cards are displayed in rows for each selected category.
+ */
+
+
+// Easier for Visual Studio's IntelliSense to work with:
+/**
+ * @typedef {Object} MovieDetails
+ * @property {number} id - The movie ID.
+ * @property {string} title - The title of the movie.
+ * @property {string} director - The name of the movie's director.
+ * @property {string} cast - Comma-separated names of up to 5 main cast members.
+ * @property {string} overview - A brief overview of the movie's plot.
+ * @property {number} rating - Average rating of the movie.
+ * @property {string} poster - URL to the movie poster image.
+ * @property {string} trailer - URL to the YouTube trailer, if available.
+ * @property {string} release_date - The release date of the movie, formatted as 'YYYY-MM-DD'.
+ */
+
+
+/**
  * Controls the state of the carousel, either playing or paused.
  */
 let isPlaying = true;
@@ -57,7 +80,7 @@ loadTopRatedMovies();
 
 /**
  * Creates a carousel item element.
- * @param {Object} movie - The movie object containing movie details.
+ * @param {MovieDetails} movie - The movie object containing movie details.
  * @param {boolean} isActive - Whether this item is the active item in the carousel.
  * @returns {HTMLElement} The carousel item element.
  */
@@ -77,7 +100,7 @@ function createCarouselItem(movie, isActive) {
 
     /**
      * Creates the item container with movie details.
-     * @param {Object} movie - The movie object containing movie details.
+     * @param {MovieDetails} movie - The movie object containing movie details.
      * @returns {HTMLElement} The item container element.
      */
     function createItemContainer(movie) {
@@ -131,7 +154,7 @@ function createCarouselItem(movie, isActive) {
 
 /**
  * Creates a movie card element for displaying in the grid.
- * @param {Object} movie - The movie object containing movie details.
+ * @param {MovieDetails} movie - The movie object containing movie details.
  * @returns {HTMLElement} The movie card element.
  */
 function createMovieCard(movie) {
@@ -153,10 +176,6 @@ function createMovieCard(movie) {
     cardTitle.className = 'card-title';
     cardTitle.textContent = movie.title;
 
-    const cardText = document.createElement('p');
-    cardText.className = 'card-text';
-    cardText.textContent = movie.overview;
-
     const cardLink = document.createElement('a');
     cardLink.href = '#';
     cardLink.className = 'btn btn-primary';
@@ -164,7 +183,6 @@ function createMovieCard(movie) {
 
     // Append all elements to card body and card div
     cardBody.appendChild(cardTitle);
-    cardBody.appendChild(cardText);
     cardBody.appendChild(cardLink);
     cardDiv.appendChild(img);
     cardDiv.appendChild(cardBody);
@@ -173,39 +191,12 @@ function createMovieCard(movie) {
     return colDiv;
 }
 
+
 /**
- * Loads movies based on the selected category and displays them as cards.
+ *  * Loads movies based on the selected category and displays them as cards. 
  * @param {string} category - The category of movies to load (e.g., 'popular', 'inTheatres').
- * @returns {Promise<void>}
+ * @returns {void}
  */
-async function loadMoviesByCategory(category) {
-    const movieCardsRow = document.getElementById('movieCardsRow');
-    movieCardsRow.innerHTML = ''; // Clear previous cards
-
-    let movies;
-    switch (category) {
-        case 'popular':
-            movies = await window.fetchPopularMovies();
-            break;
-        case 'inTheatres':
-            movies = await window.fetchPremiereMovies();
-            break;
-        case 'topRated':
-            movies = await window.fetchTopRatedMovies();
-            break;
-        case 'upcoming':
-            movies = await window.fetchUpcomingMovies();
-            break;
-        default:
-            movies = [...await window.fetchPopularMovies(), ...await window.fetchPremiereMovies(), ...await window.fetchTopRatedMovies(), ...await window.fetchUpcomingMovies()];
-    }
-
-    movies.slice(0, 4).forEach(movie => {
-        const newMovieCard = createMovieCard(movie);
-        movieCardsRow.appendChild(newMovieCard);
-    });
-}
-
 function toggleCategory(category) {
     const trendButtons = document.querySelectorAll('.trend-button');
     trendButtons.forEach(button => button.classList.remove('active'));
@@ -221,7 +212,7 @@ function toggleCategory(category) {
             window.fetchPopularMovies().then(movies => addMoviesToRow('Popular', movies));
             break;
         case 'inTheatres':
-            window.fetchPremiereMovies().then(movies => addMoviesToRow('Premiere', movies));
+            window.fetchPremiereMovies().then(movies => addMoviesToRow('In Theatres', movies));
             break;
         case 'topRated':
             window.fetchTopRatedMovies().then(movies => addMoviesToRow('Top Rated', movies));
@@ -231,22 +222,28 @@ function toggleCategory(category) {
             break;
         default:
             window.fetchPopularMovies().then(movies => addMoviesToRow('Popular', movies));
-            window.fetchPremiereMovies().then(movies => addMoviesToRow('Premiere', movies));
+            window.fetchPremiereMovies().then(movies => addMoviesToRow('In Theatres', movies));
             window.fetchTopRatedMovies().then(movies => addMoviesToRow('Top Rated', movies));
             window.fetchUpcomingMovies().then(movies => addMoviesToRow('Upcoming', movies));
             break;
     }
 }
 
+/**
+ * Loads movies based on the selected category and displays them as cards. 
+ * @param {string} title - The title to show for the row.
+ * @param {MovieDetails[]} movies - The Movie array containing movie objects and its details.
+ * @returns {void}
+ */
 function addMoviesToRow(title, movies) {
     // Create a title element
     const titleElement = document.createElement('h3');
-    titleElement.className = 'category-title';
+    titleElement.className = 'category-title pb-4';
     titleElement.textContent = title;
 
     // Create a new row for the movies
     const newMovieCardsRow = document.createElement('div');
-    newMovieCardsRow.className = 'row movie-cards-row';
+    newMovieCardsRow.className = 'row movie-cards-row list-container';
 
     // Populate the new row with the movies
     movies.slice(0, 4).forEach(movie => {
@@ -260,5 +257,5 @@ function addMoviesToRow(title, movies) {
     mainContainer.appendChild(newMovieCardsRow);
 }
 
-window.loadMoviesByCategory = loadMoviesByCategory;
+window.toggleCategory('all');
 window.toggleCategory = toggleCategory;

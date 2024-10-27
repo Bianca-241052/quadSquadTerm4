@@ -335,8 +335,6 @@
     opacity: 0.85;
 }
 
-
-
 .form-box{
     position: absolute;
     transform: translateX(-50%);
@@ -398,41 +396,6 @@
     backdrop-filter: blur(20px);
 }
 
-.input-box2{
-    position: relative;
-}
-
-.inputs2{
-    width: 100%;
-    height: 55px;
-    margin: 10px 0;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.input-field2{
-    font-size: 16px;
-    font-family: "poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    padding: 0 40px 0 20px;
-    background: rgba(255, 255, 255, 0.2);
-    outline: none;
-    backdrop-filter: blur(20px);
-}
-
-.input-box2 .icon2{
-    position: absolute;
-    top:50%;
-    right: 20px;
-    transform: translateY(-50%);
-    color: #fff;
-    width: 20px;
-    height: 20px;
-}
-
 ::placeholder{
     color: #fff;
     font-size: 16px;
@@ -447,6 +410,16 @@
     transform: translateY(-50%);
     color: #fff;
     width: 20px;
+    height: 20px;
+}
+
+.strenght-bar{
+    position: absolute;
+    top: 82%;
+    right: 16%;
+    transform: translateY(-50%);
+    color: #fff;
+    width: 300px;
     height: 20px;
 }
 
@@ -551,7 +524,6 @@ background: #333d88;
             font-style: normal;
         }
 
-
        /* MovieList CSS */
 
 .section1{
@@ -633,8 +605,11 @@ body {
   flex-wrap: wrap;
   color: white;
   font-size: 24px;
-  font-weight: 700;
   word-wrap: break-word
+}
+
+.header a.active {
+  font-weight: 700;
 }
 
 .user-options {
@@ -691,27 +666,56 @@ body {
 }
 
 .categories-container {
-  margin: auto 30px;
+  position: relative;
+  overflow: auto;
+  white-space: nowrap;
+
+  border-top: 1px solid white;
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 
+/* Custom Scrollbar! */
+  /* Custom Scrollbar for Webkit Browsers (Chrome, Safari) */
+  .categories-container::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  .categories-container::-webkit-scrollbar-track {
+    background: #232531;
+  }
+
+  .categories-container::-webkit-scrollbar-thumb {
+    background: #445921;
+    border-radius: 10px;
+  }
+
+  .categories-container::-webkit-scrollbar-thumb:hover {
+    background: #AEF504;
+  }
+/* End Custom Scrollbar! */
+
+
 .category-button {
-  display: flex;
-  justify-content: center;
-  flex-shrink: 0;
+  margin: 10px;
+}
+
+
+.category-button {
+  display: inline-block;
   color: #FFF;
   text-align: center;
   font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin: 0px 12px;
   width: 270px;
   height: 60px;
   border-radius: 100px;
   background: rgba(174, 245, 4, 0.50);
-  flex-direction: column;
   align-content: center;
-  flex-wrap: wrap;
-  border:none;
+  border: none;
 }
 
 .category-button:hover {
@@ -758,12 +762,17 @@ body {
 
 .card-body {
   position: relative;
+  text-align: left;  
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card-body a {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 1rem;
+  top: 0.5rem;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -807,7 +816,6 @@ body {
 
   font-size: 24px;
   font-style: normal;
-  font-weight: 700;
   line-height: normal;
 }
 
@@ -840,4 +848,72 @@ body {
   border-radius: 5px;
   background: #AEF504;
   margin-left: 20px;
+}
+
+.main-content-body {
+  margin: 50px 100px;
+}
+
+.category-title {
+  border-bottom: 1px solid white;
+}
+
+/* Reset styling for some components */
+.movie-rows, .category-title, .movie-cards-row {
+  padding: 0px;
+}
+
+.movie-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0px 0px 0px;
+}
+
+.movie-cards-row .col-md-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-cards-row .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #505365;
+  color: white;
+  text-align: center;
+}
+
+.movie-cards-row .card img {
+  max-height: 588px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#movieCardsRow {
+  margin: 0px;
+  width: 100%;
+}
+
+.list-container > :first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.list-container > :last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+
+.trend-button-group button.active {
+  color: white;
+  font-weight: 700;
+}
+
+.category-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  max-width: calc(100% - 100px);
 }
