@@ -578,7 +578,7 @@ html {
   height: 100%;
 }
 
-body.homePage{
+.homePage {
   font-family: Arial, sans-serif;
   background: #232531;
   margin: 0;
@@ -587,7 +587,7 @@ body.homePage{
   font-family: Poppins;
 }
 
-.homePageheader {
+.homePageHeader {
   background-color: #707070;
   color: #fff;
   padding: 18px;
@@ -608,11 +608,11 @@ body.homePage{
   word-wrap: break-word
 }
 
-.homePageheader a.active {
+.homePageHeader a.active {
   font-weight: 700;
 }
 
-.homePageuser-options {
+.homePageUser-options {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -620,18 +620,18 @@ body.homePage{
   list-style: none;
 }
 
-.homePageuser-options a {
+.homePageUser-options a {
   display: block;
   padding: .5rem 1rem;
 }
 
-.homePagemovie-banner {
+.homePageMovie-banner {
   background-color: #d9d9d9;
   height: 400px;
   position: relative;
 }
 
-.homePagemovie-info {
+.homePageMovie-info {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -647,7 +647,7 @@ body.homePage{
   margin-top: 20px;
 }
 
-.watch-button, .watchlist-button {
+.homePageWatch-button, .homePageWatchList-button {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -660,7 +660,7 @@ body.homePage{
   color: #fff;
 }
 
-.homePageWatchlist-button {
+.homePageWatchList-button {
   background-color: #b6e336;
   color: #000;
 }
@@ -696,12 +696,12 @@ body.homePage{
 /* End Custom Scrollbar! */
 
 
-.homePagecCategory-button {
+.homePageCategory-button {
   margin: 10px;
 }
 
 
-.homePageategory-button {
+.homePageCategory-button {
   display: inline-block;
   color: #FFF;
   text-align: center;
@@ -737,7 +737,7 @@ body.homePage{
   height: calc(100vh - 128px);
 }
 
-#toggleCarousel {
+#homePageToggleCarousel {
   position: absolute;
   bottom: 20%;
   right: 10%;
@@ -890,7 +890,7 @@ body.homePage{
   object-fit: cover;
 }
 
-#movieCardsRow {
+#homePageMovieCardsRow {
   margin: 0px;
   width: 100%;
 }
