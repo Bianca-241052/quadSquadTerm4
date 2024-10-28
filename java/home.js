@@ -157,7 +157,7 @@ function createCarouselItem(movie, isActive) {
  * @param {MovieDetails} movie - The movie object containing movie details.
  * @returns {HTMLElement} The movie card element.
  */
-function createMovieCard(movie) {
+function createMovieCard(movie, showFullDate = false) {
     const colDiv = document.createElement('div');
     colDiv.className = 'col-md-3';
 
@@ -176,14 +176,39 @@ function createMovieCard(movie) {
     cardTitle.className = 'card-title';
     cardTitle.textContent = movie.title;
 
-    const cardLink = document.createElement('a');
+    // create the details for the bottom of the card
+    const cardDetails = document.createElement('div');
+    cardDetails.className = 'd-flex justify-content-between mt-2';
+
+    const movieYear = document.createElement('span');
+
+    // If we want to see the full date, then show it.
+    if(showFullDate) {
+        movieYear.textContent = movie.release_date;
+        
+        // Check if the release_date is present
+    } else if (movie.release_date) {
+        movieYear.textContent = new Date(movie.release_date).getFullYear();
+    } else {
+        movieYear.textContent = 'N/A';
+    }
+
+    const movieRating = document.createElement('span');
+    // round rating to 1 decimal
+    movieRating.textContent = 'Rating: ' + Math.round(movie.rating * 10) / 10;
+    
+    cardDetails.appendChild(movieYear);
+    cardDetails.appendChild(movieRating);
+
+    const cardLink = document.createElement('button');
     cardLink.href = '#';
-    cardLink.className = 'btn btn-primary';
-    cardLink.textContent = 'More Info';
+    cardLink.className = 'movie-btn';
+    cardLink.textContent = '+ Watch list';
 
     // Append all elements to card body and card div
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardLink);
+    cardBody.appendChild(cardDetails);
     cardDiv.appendChild(img);
     cardDiv.appendChild(cardBody);
     colDiv.appendChild(cardDiv);
@@ -238,16 +263,16 @@ function toggleCategory(category) {
 function addMoviesToRow(title, movies) {
     // Create a title element
     const titleElement = document.createElement('h3');
-    titleElement.className = 'category-title pb-4';
+    titleElement.className = 'category-title pb-4 mb-4';
     titleElement.textContent = title;
 
     // Create a new row for the movies
     const newMovieCardsRow = document.createElement('div');
     newMovieCardsRow.className = 'row movie-cards-row list-container';
 
-    // Populate the new row with the movies
+    // Populate the new row with the movies.
     movies.slice(0, 4).forEach(movie => {
-        const newMovieCard = createMovieCard(movie);
+        const newMovieCard = createMovieCard(movie, title === 'Upcoming');
         newMovieCardsRow.appendChild(newMovieCard);
     });
 
