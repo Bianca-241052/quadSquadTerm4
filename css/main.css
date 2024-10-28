@@ -578,7 +578,7 @@ html {
   height: 100%;
 }
 
-.homePage {
+body.mainPage {
   font-family: Arial, sans-serif;
   background: #232531;
   margin: 0;
@@ -587,16 +587,7 @@ html {
   font-family: Poppins;
 }
 
-.homePageHeader {
-  background-color: #707070;
-  color: #fff;
-  padding: 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header a {
+.mainPage .header a {
   text-decoration: none;
   margin: 0 15px;
   font-size: 24px;
@@ -605,14 +596,14 @@ html {
   flex-wrap: wrap;
   color: white;
   font-size: 24px;
-  word-wrap: break-word
+  word-wrap: break-word;
 }
 
-.homePageHeader a.active {
+.mainPage .header a.active {
   font-weight: 700;
 }
 
-.homePageUser-options {
+.mainPage .user-options {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -620,34 +611,34 @@ html {
   list-style: none;
 }
 
-.homePageUser-options a {
+.mainPage .user-options a {
   display: block;
   padding: .5rem 1rem;
 }
 
-.homePageMovie-banner {
+.mainPage .movie-banner {
   background-color: #d9d9d9;
   height: 400px;
   position: relative;
 }
 
-.homePageMovie-info {
+.mainPage .movie-info {
   position: absolute;
   bottom: 20px;
   left: 20px;
   color: white;
 }
 
-.homePageMovie-title {
+.mainPage .movie-title {
   font-size: 40px;
   font-weight: bold;
 }
 
-.buttons-container {
+.mainPage .buttons-container {
   margin-top: 20px;
 }
 
-.homePageWatch-button, .homePageWatchList-button {
+.mainPage .watch-button, .mainPage .watchlist-button {
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -655,53 +646,49 @@ html {
   margin-right: 10px;
 }
 
-.homePageWatch-button {
+.mainPage .watch-button {
   background-color: #9d41f2;
   color: #fff;
 }
 
-.homePageWatchList-button {
+.mainPage .watchlist-button {
   background-color: #b6e336;
   color: #000;
 }
 
-.homePageCategories-container {
+.mainPage .categories-container {
   position: relative;
   overflow: auto;
   white-space: nowrap;
-
   border-top: 1px solid white;
   padding-top: 20px;
   padding-bottom: 5px;
 }
 
 /* Custom Scrollbar! */
-  /* Custom Scrollbar for Webkit Browsers (Chrome, Safari) */
-  .homePageCategories-container::-webkit-scrollbar {
-    height: 10px;
-  }
+.mainPage .categories-container::-webkit-scrollbar {
+  height: 10px;
+}
 
-  .homePageCategories-container::-webkit-scrollbar-track {
-    background: #232531;
-  }
+.mainPage .categories-container::-webkit-scrollbar-track {
+  background: #232531;
+}
 
-  .homePageCategories-container::-webkit-scrollbar-thumb {
-    background: #445921;
-    border-radius: 10px;
-  }
+.mainPage .categories-container::-webkit-scrollbar-thumb {
+  background: #445921;
+  border-radius: 10px;
+}
 
-  .homePageCategories-container::-webkit-scrollbar-thumb:hover {
-    background: #AEF504;
-  }
+.mainPage .categories-container::-webkit-scrollbar-thumb:hover {
+  background: #AEF504;
+}
 /* End Custom Scrollbar! */
 
-
-.homePageCategory-button {
+.mainPage .category-button {
   margin: 10px;
 }
 
-
-.homePageCategory-button {
+.mainPage .category-button {
   display: inline-block;
   color: #FFF;
   text-align: center;
@@ -718,38 +705,38 @@ html {
   border: none;
 }
 
-.homePageCategory-button:hover {
+.mainPage .category-button:hover {
   background: #AEF504;
 }
 
-.homePageCarousel {
+.mainPage .carousel {
   display: flex;
   overflow: auto;
   gap: 10px;
   height: calc(100vh - 128px);
 }
 
-.homePageCarousel-item {
+.mainPage .carousel-item {
   color: #FFF;
   background-color: #020433;
   width: 100%;
-  margin:auto;
+  margin: auto;
   height: calc(100vh - 128px);
 }
 
-#homePageToggleCarousel {
+.mainPage #toggleCarousel {
   position: absolute;
   bottom: 20%;
   right: 10%;
   z-index: 10;
 }
 
-.homePageToggle-icon {
+.mainPage .toggle-icon {
   height: 130px;
   width: 130px;
 }
 
-.homePageItem-container {
+.mainPage .item-container {
   width: 100%;
   display: flex;
   height: 100%;
@@ -760,70 +747,64 @@ html {
   padding: 0 5%;
 }
 
-.homePageCard-body {
+.mainPage .card-body {
   position: relative;
   text-align: left;  
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 0px;
 }
 
-.card-body a {
-  position: absolute;
-  right: 1rem;
-  top: 0.5rem;
-}
-
-.homePageCarousel-indicators [data-bs-target] {
+.mainPage .carousel-indicators [data-bs-target] {
   background-color: black;
   width: 125px;
   height: 5px;
 }
 
-.homePageMovie-title {
+.mainPage .movie-title {
   font-size: 80px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
-.homePageMovie-rating {
+.mainPage .movie-rating {
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
 }
 
-.homePageMovie-duration {
+.mainPage .movie-duration {
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
 }
 
-.homePageMovie-description {
+.mainPage .movie-description {
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 
-.homePageTrend-button-group button {
+.mainPage .trend-button-group button {
   background: none;
-  color:white;
-  border:none;
-
+  color: white;
+  border: none;
   font-size: 24px;
   font-style: normal;
   line-height: normal;
 }
 
-.homePageMovie-button-group {
+.mainPage .movie-button-group {
   margin-top: 86px;
 }
 
-.homePageWatch-now {
+.mainPage .watch-now {
   color: white;
   background-color: #784DF4;
   width: 270px;
@@ -836,7 +817,7 @@ html {
   text-align: center;
 }
 
-.homePageWatch-later {
+.mainPage .watch-later {
   color: white;
   font-size: 28px;
   font-weight: 700;
@@ -850,31 +831,31 @@ html {
   margin-left: 20px;
 }
 
-.homePageMain-content-body {
+.mainPage .main-content-body {
   margin: 50px 100px;
 }
 
-.homePageCategory-title {
+.mainPage .category-title {
   border-bottom: 1px solid white;
 }
 
 /* Reset styling for some components */
-.homePageMovie-rows, .category-title, .movie-cards-row {
+.mainPage .movie-rows, .mainPage .category-title, .mainPage .movie-cards-row {
   padding: 0px;
 }
 
-.homePageMovie-cards-row {
+.mainPage .movie-cards-row {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 0px 0px 0px;
+  margin: 20px 0px 50px 0px;
 }
 
-.homePageMovie-cards-row .col-md-3 {
+.mainPage .movie-cards-row .col-md-3 {
   display: flex;
   flex-direction: column;
 }
 
-.homePageMovie-cards-row .card {
+.mainPage .movie-cards-row .card {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -883,37 +864,65 @@ html {
   text-align: center;
 }
 
-.homePageMovie-cards-row .card img {
+.mainPage .movie-cards-row .card img {
   max-height: 588px;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-#homePageMovieCardsRow {
+.mainPage #movieCardsRow {
   margin: 0px;
   width: 100%;
 }
 
-.homePageList-container > :first-child {
+.mainPage .list-container > :first-child {
   margin-left: 0;
   padding-left: 0;
 }
 
-.homePageList-container > :last-child {
+.mainPage .list-container > :last-child {
   margin-right: 0;
   padding-right: 0;
 }
 
-.homePageTrend-button-group button.active {
+.mainPage .trend-button-group button.active {
   color: white;
   font-weight: 700;
 }
 
-.homePagECategory-title {
+.mainPage .category-title {
   color: white;
   font-size: 24px;
   font-weight: 700;
   line-height: 36px;
-  max-width: calc(100% - 100px);
+}
+
+.mainPage .movie-cards-row .card-title {
+  max-width: calc(100% - 180px);
+  line-height: 1.2em;
+  min-height: 2.4em;
+}
+
+.mainPage .movie-cards-row .movie-btn {
+  border-radius: 100px;
+  border: none;
+  background: #784DF4;
+  display: flex;
+  width: 180px;
+  height: 50px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  right: 0.5rem;
+  top: 0.6rem;
+  align-content: center;
+  flex-wrap: wrap;
 }
