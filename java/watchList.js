@@ -26,6 +26,11 @@
     // Render watchlist
     function renderWatchList() {
         console.log("Rendering watchlist"); // Debugging
+
+            // Log all movie IDs in the watchList
+    const allMovieIds = watchList.map(movie => movie.id);
+    console.log("All movie IDs in watchlist:", allMovieIds);
+
         const watchListContainer = document.getElementById('watchListContainer');
         watchListContainer.innerHTML = '';
 
