@@ -63,7 +63,7 @@
 
     // Attach event listeners for adding to watchlist
     document.addEventListener('click', (event) => {
-        if (event.target.classList.contains('watch-later') || event.target.classList.contains('movie-btn')) {
+        if (event.target.classList.contains('watch-later') || event.target.classList.contains('watch-later')) {
             const movieCard = event.target.closest('.card');
             if (!movieCard) {
                 console.error("No .card element found for the clicked element:", event.target);
@@ -89,6 +89,8 @@
             }
         }
     });
+
+
 
     // Initial render
     renderWatchList();

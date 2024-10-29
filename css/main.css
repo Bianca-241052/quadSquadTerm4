@@ -447,82 +447,7 @@ background: #333d88;
     animation: fadeOut 7s forwards;
 }
 
-        /*WATCH LIST*/
 
-        .WatchListBody{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        
-            background: url(../assets/lodin\ back.jpg) no-repeat;
-            background-position: center;
-            height: auto;
-            width: auto;
-          }
-  
-          h12{
-            color: #ffffff;
-            font-size: 24px;
-            font-family: "Poppins", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            }
-  
-          .movie-card {
-            width: 400px;
-            height: auto;
-            margin: 10px;
-            border: 1px ;
-            border-radius: 10px;
-            overflow: hidden;
-            background-color: #23253181;
-            color: white;
-            position: relative;
-            border: 2px solid rgba(35, 37, 50, 100);
-            
-        }
-  
-        .movie-card img {
-            width: 100%;
-            height: auto;
-            background-color: #f8d5d5;
-            object-fit: cover;
-            border-bottom: 2px solid rgba(35, 37, 50, 100) ;
-        }
-  
-        .movie-card .info {
-          display: flex;
-          justify-content: space-between;
-          padding: 10px 15px;
-          font-size: 0.85rem;
-          text-align: center;
-        }
-  
-        .remove-btn {
-            background-color: #c1f700;
-            border: none;
-            padding: 5px 10px;
-            font-weight: bold;
-            border-radius: 20px;
-            cursor: pointer;
-            color: #333;
-            font-size: 16px;
-            font-family: "Poppins", sans-serif;
-            font-weight: 300;
-            font-style: normal;
-        }
-  
-        .details {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 15px;
-            font-size: 0.85rem;
-            color: #ffffff;
-            font-size: 16px;
-            font-family: "Poppins", sans-serif;
-            font-weight: 300;
-            font-style: normal;
-        }
 
 
                 /*splash*/
@@ -978,8 +903,8 @@ body.mainPage {
   line-height: 1.2em;
   min-height: 2.4em;
 }
-
-.mainPage .movie-cards-row .movie-btn {
+/*cange movie-btn to watch-later */
+.mainPage .movie-cards-row .watch-later {
   border-radius: 100px;
   border: none;
   background: #784DF4;
@@ -1000,4 +925,77 @@ body.mainPage {
   top: 0.6rem;
   align-content: center;
   flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+
+/*andre*/
+        /*WATCH LIST*/
+  
+          h3{
+            color: #ffffff;
+            font-size: 24px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+           .watchList .movie-card {
+            width: 400px;
+            height: auto;
+            margin: 40px;
+            border: 1px ;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #23253181;
+            color: white;
+            position: relative;
+            border: 2px solid rgba(35, 37, 50, 100);
+            
+        }
+  
+        .watchList .movie-card img {
+            width: 100%;
+            height: auto;
+            background-color: #f8d5d5;
+            object-fit: cover;
+            border-bottom: 2px solid rgba(35, 37, 50, 100) ;
+        }
+  
+
+/*romove bth*/
+
+
+
+.watchList .movie-btn {
+  border-radius: 100px;
+  border: none;
+  background: #784DF4;
+  display: flex;
+  width: 180px;
+  height: 50px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #FFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  right: 0.5rem;
+  top: 89%;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.watchList .movie-btn:hover{
+  background: #AEF504;
 }
