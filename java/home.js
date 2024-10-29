@@ -163,6 +163,9 @@ function createMovieCard(movie, showFullDate = false) {
 
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card';
+    //andre//
+    cardDiv.dataset.id = movie.id; // Assign data-id to store movie ID
+    //
 
     const img = document.createElement('img');
     img.src = movie.poster;
@@ -194,6 +197,9 @@ function createMovieCard(movie, showFullDate = false) {
     }
 
     const movieRating = document.createElement('span');
+    //andre//
+    movieRating.className = 'movie-rating'; // Added class for easy selection
+    //
     // round rating to 1 decimal
     movieRating.textContent = 'Rating: ' + Math.round(movie.rating * 10) / 10;
     
@@ -201,9 +207,12 @@ function createMovieCard(movie, showFullDate = false) {
     cardDetails.appendChild(movieRating);
 
     const cardLink = document.createElement('button');
-    cardLink.href = '#';
-    cardLink.className = 'movie-btn';
-    cardLink.textContent = '+ Watch list';
+    // cardLink.href = '#';
+    // cardLink.className = 'movie-btn';
+    // cardLink.textContent = '+ Watch list';
+    //andre replaced for//
+    cardLink.className = 'watch-later'; // Use class for the button to identify it in event listener
+    cardLink.textContent = '+ Watch List'; // Initially set to add to watchlist
 
     // Append all elements to card body and card div
     cardBody.appendChild(cardTitle);
@@ -284,10 +293,6 @@ function addMoviesToRow(title, movies) {
 
 window.toggleCategory('all');
 window.toggleCategory = toggleCategory;
-
-
-
-
 
 
 
