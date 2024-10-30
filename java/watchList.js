@@ -37,6 +37,7 @@
         if (watchList.length === 0) {
             const emptyMessage = document.createElement('p');
             emptyMessage.textContent = "Your watchlist is currently empty.";
+            emptyMessage.classList.add('empty-message');
             watchListContainer.appendChild(emptyMessage);
             return;
         }

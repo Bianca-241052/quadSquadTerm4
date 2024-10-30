@@ -296,3 +296,36 @@ window.toggleCategory = toggleCategory;
 
 
 
+//andre//
+//homepage intro splash//
+
+let HomeInIntro = document.querySelector('.home-intro');
+let HomeInLogo = document.querySelector('.home-intro-logo-header');
+let HomeInSpan = document.querySelectorAll('.home-intro-text');
+
+window.addEventListener('DOMContentLoaded', ()=>{
+
+  setTimeout(()=>{
+
+    HomeInSpan.forEach((span, idx)=>{
+      setTimeout(()=>{
+        span.classList.add('active');
+      }, (idx + 1) * 400)
+    });
+
+    setTimeout(()=>{
+      HomeInSpan.forEach((span, idx)=>{
+
+        setTimeout(()=>{
+          span.classList.remove('active');
+          span.classList.add('fade');
+        }, (idx + 1) * 50)
+      })
+    }, 2000);
+
+    setTimeout(()=>{
+      HomeInIntro.style.top = '-1000vh';
+    }, 2300)
+
+  })
+})

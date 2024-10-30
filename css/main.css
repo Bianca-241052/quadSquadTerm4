@@ -139,6 +139,7 @@
     width: auto;
     height: 60px;
     padding-left: 10px;
+    margin-left: 10px;
     }
     
     .navbar a{
@@ -290,7 +291,107 @@
     }
 
     /*sign in*/
+    /*signIn-intro*/
 
+    .signIn-intro{
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #161616;
+      transition: 1s;
+    }
+
+    .intro-logo-header{
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #ffffff;
+    }
+
+    .intro-text{
+      position: relative;
+      display: inline-block;
+      bottom: -20px;
+      opacity: 0;
+    }
+
+    .intro-text.active{
+      bottom: 0;
+      opacity: 1;
+      transition: ease-in-out 0.5s;
+    }
+
+    .intro-text.fade{
+      bottom: 150px;
+      opacity: 0;
+      transition: ease-in-out 0.5s;
+    }
+
+    .intro-logo{
+      width: 300px;
+      position: relative;
+      display: inline-block;
+      bottom: -20px;
+      align-items: center;
+      left: -10%;
+    }
+
+/*homepage splach*/
+.home-intro{
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+  transition: 1s;
+}
+
+
+
+.home-intro-logo-header{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+
+.home-intro-text{
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.home-intro-text.active{
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.home-intro-text.fade{
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
+.home-intro-logo{
+  width: 300px;
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  align-items: center;
+  left: 10%;
+}
+
+
+ /*sign in page*/
 .form-cotainer{
     display: flex;
     width: 450px;
@@ -450,7 +551,7 @@ background: #333d88;
 
 
 
-                /*splash*/
+                /* splash
 
 
                 .splash {
@@ -516,7 +617,7 @@ background: #333d88;
               
              .fade-in.fade-out {
                   animation: fade-out 3s ease-in forwards;
-              }
+              } */
 
 
 
@@ -937,6 +1038,18 @@ body.mainPage {
 
 /*andre*/
         /*WATCH LIST*/
+        .watchlist-page{
+          min-height: 100vh;
+        }
+
+        .empty-message {
+          color: #999;              
+          font-size: 20px;          
+          text-align: center;       
+          margin: 20px 0;          
+          font-style: italic;       
+      }
+      
   
           h3{
             color: #ffffff;
