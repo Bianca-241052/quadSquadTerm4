@@ -192,7 +192,7 @@ function changeIcon(value){
     }
 }
 
-//andre//
+
 //signin intro splash//
 
 let SignInIntro = document.querySelector('.signIn-intro');
