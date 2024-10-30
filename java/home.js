@@ -297,6 +297,9 @@ window.toggleCategory = toggleCategory;
 
 
 //andre//
+
+
+
 //homepage intro splash//
 
 let HomeInIntro = document.querySelector('.home-intro');
@@ -327,5 +330,5 @@ window.addEventListener('DOMContentLoaded', ()=>{
       HomeInIntro.style.top = '-1000vh';
     }, 2300)
 
-  })
+  }, 700);//make the start shorter//
 })

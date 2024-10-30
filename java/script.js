@@ -193,6 +193,7 @@ function changeIcon(value){
 }
 
 
+
 //signin intro splash//
 
 let SignInIntro = document.querySelector('.signIn-intro');
@@ -223,8 +224,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
       SignInIntro.style.top = '-100vh';
     }, 2300)
 
-  })
+  }, 700);//make the start shorter//
 })
+
+
+
 
 
 
