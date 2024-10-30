@@ -951,7 +951,7 @@ background: #333d88;
                   align-items: center;
                   text-align: center;
               }
-              
+              */
               .splash-logo {
                   width: 300px; /* Adjust as needed */
                   height: auto;
@@ -1478,4 +1478,40 @@ body.mainPage {
 .watchList .movie-btn:hover{
   background: #AEF504;
   color: #333;
+}
+
+/*MovieList updates*/
+
+.dropdown {
+  
+}
+
+.dropdown button {
+  color: #ffffff;
+  background-color:#9d41f2;
+  margin-right: 10px;
+}
+
+.dropdown button:hover {
+  color:#000000;
+  background-color:#AEF504;
+}
+
+.dropdown-item {
+
+}
+
+.flexContainer1 {
+  max-height: fit-content;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 20px;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    text-align: center;
+    justify-content: right;
+    align-items: center;
+    align-content: space-around;
 }
