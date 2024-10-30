@@ -324,11 +324,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
           span.classList.add('fade');
         }, (idx + 1) * 50)
       })
-    }, 2000);
+    }, 2700);
 
     setTimeout(()=>{
-      HomeInIntro.style.top = '-1000vh';
-    }, 2300)
+      HomeInIntro.style.top = '-100vh';
+    }, 2800)
 
   }, 700);//make the start shorter//
 })
