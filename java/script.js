@@ -194,4 +194,46 @@ function changeIcon(value){
 
 
 
+//signin intro splash//
+
+let SignInIntro = document.querySelector('.signIn-intro');
+let SignInLogo = document.querySelector('.intro-logo-header');
+let SignInSpan = document.querySelectorAll('.intro-text');
+
+window.addEventListener('DOMContentLoaded', ()=>{
+
+  setTimeout(()=>{
+
+    SignInSpan.forEach((span, idx)=>{
+      setTimeout(()=>{
+        span.classList.add('active');
+      }, (idx + 1) * 400)
+    });
+
+    setTimeout(()=>{
+      SignInSpan.forEach((span, idx)=>{
+
+        setTimeout(()=>{
+          span.classList.remove('active');
+          span.classList.add('fade');
+        }, (idx + 1) * 50)
+      })
+    }, 2000);
+
+    setTimeout(()=>{
+      SignInIntro.style.top = '-100vh';
+    }, 2300)
+
+  }, 700);//make the start shorter//
+})
+
+
+
+
+
+
+
+
+
+
 
