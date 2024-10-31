@@ -29,7 +29,7 @@
  }
  //register
  const signUp = document.getElementById('submit-signUp-btn');
- signUp.addEventListener('click', (event) => {
+ signUp?.addEventListener('click', (event) => {
      event.preventDefault();
      const email = document.getElementById('rEmail').value;
      const password = document.getElementById('registerPassword').value;
@@ -78,7 +78,7 @@
  });
 
 const signIn=document.getElementById('submit-signIn-btn');
-signIn.addEventListener('click', (event)=>{
+signIn?.addEventListener('click', (event)=>{
    event.preventDefault();
    const email=document.getElementById('logEmail').value;
    const password=document.getElementById('logPassword').value;
