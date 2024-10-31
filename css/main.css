@@ -1,29 +1,51 @@
+body {
+  font-family: Poppins;
+}
+
 /* Juliette CSS */
 
 .indivContainer {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start; /* Align text and image at the top */
-  justify-content: flex-start;
   padding: 3em 4em;
-  flex-wrap: wrap;
+  gap: 100px;
+  height: calc(100vh - 92px);
 }
 
-.movieImg {
-  flex-shrink: 0; /* Prevent the image from shrinking */
-  margin-right: 5em;
-}
-
-.movieImg img {
-  width: 425px;
+#moviePoster {
+  max-width: 40%;
+  min-width: 300px;
+  background: #8c8c8c80;
   height: auto;
+  object-fit: contain;
 }
+
+#movieTitle {
+  font-weight: 700;
+}
+
+.trailerButton button {
+  background: #784DF4;
+  color: white;
+}
+
+/*.movieImg {
+/*  flex-shrink: 0; /* Prevent the image from shrinking */
+/*  margin-right: 5em;
+/*}
+
+/*.movieImg img {
+/*  width: 425px;
+/*  height: auto;
+/*} */
 
 .movieText {
   flex-grow: 1; /* Let the text take up the remaining space */
   display: flex;
   flex-direction: column; /* Stack the text and play button vertically */
   color: #ffffff;
+  height: 100%;
+  width: calc(60% - 100px);
+  justify-content: center;
 }
 
 .playButton {
@@ -47,6 +69,11 @@
 
 /* Media queries for responsive adjustments */
 @media (max-width: 825px) {
+
+  body, .indivContainer {
+    height: auto;
+  }
+
   .indivContainer {
       flex-direction: column;
       align-items: center; /* Center items for smaller screens */
@@ -1012,7 +1039,11 @@ body.mainPage {
   font-family: Poppins;
 }
 
-.mainPage .header a {
+.header {
+  background: #8c8c8c80;
+}
+
+.header a {
   text-decoration: none;
   margin: 0 15px;
   font-size: 24px;
@@ -1024,11 +1055,11 @@ body.mainPage {
   word-wrap: break-word;
 }
 
-.mainPage .header a.active {
+.header a.active {
   font-weight: 700;
 }
 
-.mainPage .user-options {
+.user-options {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
@@ -1036,7 +1067,7 @@ body.mainPage {
   list-style: none;
 }
 
-.mainPage .user-options a {
+.user-options a {
   display: block;
   padding: .5rem 1rem;
 }
@@ -1138,7 +1169,7 @@ body.mainPage {
   display: flex;
   overflow: auto;
   gap: 10px;
-  height: calc(100vh - 128px);
+  height: calc(100vh - 92px);
 }
 
 .mainPage .carousel-item {
@@ -1146,7 +1177,7 @@ body.mainPage {
   background-color: #020433;
   width: 100%;
   margin: auto;
-  height: calc(100vh - 128px);
+  height: calc(100vh - 92px);
 }
 
 .mainPage #toggleCarousel {

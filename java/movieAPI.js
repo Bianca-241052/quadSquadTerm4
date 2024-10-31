@@ -5,9 +5,12 @@
  * @typedef {Object} MovieDetails
  * @property {number} id - The movie ID.
  * @property {string} title - The title of the movie.
+ * @property {string} director - The director of the movie.
+ * @property {string} cast - An array of cast members in the movie.
  * @property {string} overview - A brief overview of the movie's plot.
  * @property {number} rating - Average rating of the movie.
  * @property {string} poster - URL to the movie poster image.
+ * @property {string} trailer - URL to the movie trailer (if available).
  * @property {string} release_date - The release date of the movie, formatted as 'YYYY-MM-DD'.
  */
 
