@@ -1,4 +1,4 @@
-import { addToWatchList, removeFromWatchList, isInWatchList, getWatchList, /*renderWatchList*/ } from './watchlist.js';
+import { addToWatchList, removeFromWatchList, isInWatchList, getWatchList, /*renderWatchList*/ } from './Cookies.js';
 
 /**
     The home.js file provides JavaScript functionality to be used for the Home.html page of a movie streaming application. 
