@@ -132,3 +132,190 @@ window.fetchUpcomingMovies = fetchUpcomingMovies;
 window.fetchTopRatedMovies = fetchTopRatedMovies;
 window.fetchPopularMovies = fetchPopularMovies;
 window.fetchPremiereMovies = fetchPremiereMovies;
+
+
+
+/**
+ * MovieList
+ * Fetch action movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of upcoming movie details.
+ */
+const fetchActionMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Action');
+};
+
+/**
+ * Fetch Animation movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of upcoming movie details.
+ */
+const fetchAnimationMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Animation');
+};
+
+/**
+ * Fetch Biography movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of upcoming movie details.
+ */
+const fetchBiographyMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Biography');
+};
+
+/**
+ * Fetch Crime movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of crime movie details.
+ */
+const fetchCrimeMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Crime');
+};
+
+/**
+ * Fetch Documentary movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of documentary movie details.
+ */
+const fetchDocumentaryMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Documentary');
+};
+
+/**
+ * Fetch Drama movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of drama movie details.
+ */
+const fetchDramaMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Drama');
+};
+
+/**
+ * Fetch Fantasy movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of fantasy movie details.
+ */
+const fetchFantasyMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Fantasy');
+};
+
+/**
+ * Fetch Horror movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of horror movie details.
+ */
+const fetchHorrorMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Horror');
+};
+
+/**
+ * Fetch Sci-Fi movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of sci-fi movie details.
+ */
+const fetchSciFiMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Sci-Fi');
+};
+
+/**
+ * Fetch Thriller movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of thriller movie details.
+ */
+const fetchThrillerMovies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, 'Thriller');
+};
+
+window.fetchActionMovies = fetchActionMovies;
+window.fetchAnimationMovies = fetchAnimationMovies;
+window.fetchBiographyMovies = fetchBiographyMovies;
+window.fetchCrimeMovies = fetchCrimeMovies;
+window.fetchDocumentaryMovies = fetchDocumentaryMovies;
+window.fetchDramaMovies = fetchDramaMovies;
+window.fetchFantasyMovies = fetchFantasyMovies;
+window.fetchHorrorMovies = fetchHorrorMovies;
+window.fetchSciFiMovies = fetchSciFiMovies;
+window.fetchThrillerMovies = fetchThrillerMovies;
+
+/**
+ * Fetch 1970-1979 movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of movie details from 1970-1979.
+ */
+const fetch1970Movies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, '1970-1979');
+};
+
+/**
+ * Fetch 1980-1989 movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of movie details from 1980-1989.
+ */
+const fetch1980Movies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, '1980-1989');
+};
+
+/**
+ * Fetch 1990-1999 movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of movie details from 1990-1999.
+ */
+const fetch1990Movies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, '1990-1999');
+};
+
+/**
+ * Fetch 2000-2009 movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2000-2009.
+ */
+const fetch2000Movies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, '2000-2009');
+};
+
+/**
+ * Fetch 2010-2019 movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2010-2019.
+ */
+const fetch2010Movies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, '2010-2019');
+};
+
+/**
+ * Fetch 2020-2024 movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2020-2024.
+ */
+const fetch2020Movies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, '2020-2024');
+};
+
+window.fetch1970Movies = fetch1970Movies;
+window.fetch1980Movies = fetch1980Movies;
+window.fetch1990Movies = fetch1990Movies;
+window.fetch2000Movies = fetch2000Movies;
+window.fetch2010Movies = fetch2010Movies;
+window.fetch2020Movies = fetch2020Movies;
+
+
+/**
+ * Fetch 0-5 movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2010-2019.
+ */
+const fetch5Movies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, '0-5');
+};
+
+/**
+ * Fetch 6-10 movies.
+ * @returns {Promise<Array<MovieDetails>>} An array of movie details from 2020-2024.
+ */
+const fetch10Movies = async () => {
+    const url = 'https://api.themoviedb.org/3/movie/now_playing?region=za&language=en-US';
+    return await fetchMovies(url, '6-10');
+};
+
+window.fetch5Movies = fetch5Movies;
+window.fetch10Movies = fetch10Movies;
