@@ -114,6 +114,7 @@ nav {
 .navbar .logo {
   display: flex;
   align-items: center;
+  margin-right: 20px;
 }
 
 .navbar .logo img {
@@ -147,6 +148,7 @@ nav {
   color: #ffffff;
   border: none;
   background: none;
+  width: 40px;
 }
 
 .language{
@@ -1383,82 +1385,110 @@ body.mainPage {
 
 /*andre*/
         /*WATCH LIST*/
-        .watchlist-page{
-          min-height: 100vh;
-        }
 
-        .empty-message {
-          color: #999;              
-          font-size: 20px;          
-          text-align: center;       
-          margin: 20px 0;          
-          font-style: italic;       
-      }
-      
-  
-          h3{
-            color: #ffffff;
-            font-size: 24px;
-            font-family: "Poppins", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            }
-
-           .watchList .movie-card {
-            width: 400px;
-            height: 750px;
-            margin: 40px;
-            border: 1px ;
-            border-radius: 10px;
-            overflow: hidden;
-            background-color: #23253181;
-            backdrop-filter: blur(20px);
-            color: white;
-            position: relative;
-            border: 2px solid rgba(35, 37, 50, 0.288);
-            
-        }
-  
-        .watchList .movie-card img {
-          max-height: 588px;
-          width: 400px;
-          height: 100%;
-          object-fit: cover;
-          margin-left: -10px;
-        }
-  
-
-/*romove bth*/
-
-
-
-.watchList .movie-btn {
-  border-radius: 100px;
-  border: none;
-  background: #784DF4;
-  display: flex;
-  width: 180px;
-  height: 50px;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-  color: #FFF;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  position: absolute;
+        /* Watchlist Card Container */
+/* Page and Container Styling */
+.watchlist-page {
   text-align: center;
-  right: 0.5rem;
-  top: 89%;
-  align-content: center;
-  flex-wrap: wrap;
+  color: #fff;
+  padding: 20px;
+  min-height: 100vh;
 }
 
-.watchList .movie-btn:hover{
-  background: #AEF504;
-  color: #333;
+#watchListContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 20px; /* Space between cards */
+  padding-top: 20px;
+  justify-content: center;
 }
+
+
+/* Card Styling */
+.watchlist-page .card {
+  background: rgba(25, 25, 50, 0.8); /* Dark semi-transparent background */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for raised look */
+  color: #fff; /* White text color */
+  overflow: hidden;
+  transition: transform 0.2s;
+  max-width: 100%;
+  width: 400px;
+}
+
+.watchlist-page .card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Poster Image */
+.watchlist-page .card-img-top {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  width: 100%;
+  height: auto;
+}
+
+/* Card Body */
+.watchlist-page .card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Title */
+.watchlist-page .card-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+/* Rating and Release Year */
+.watchlist-page .d-flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* Remove Button */
+.watchlist-page .remove-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: #6c63ff; /* Purple button color */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:  0.2s;
+}
+
+.watchlist-page .remove-btn:hover {
+  background-color: #5348c6; /* Darker purple on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 992px) {
+  #watchListContainer {
+      grid-template-columns: repeat(3, 1fr); /* 3 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #watchListContainer {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row on small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  #watchListContainer {
+      grid-template-columns: 1fr; /* 1 card per row on extra-small screens */
+  }
+}
+
 
 /*MovieList updates*/
 
