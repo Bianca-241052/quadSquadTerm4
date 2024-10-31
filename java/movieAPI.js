@@ -1,19 +1,4 @@
-/**
- * Options used for fetch requests to the Movie Database API.
- * Contains method type and authorization headers.
- */
-const options = {
-    method: 'GET',
-    headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZDE4OGY5N2I3OTQ3YmIxM2E3N2FhMjgzM2YxZWNiZSIsIm5iZiI6MTcyOTc1OTI5Mi42ODUxNDcsInN1YiI6IjY3MTBjNjFkMWI5MTJhZGQyZWRiY2QwZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.79Xo8DabsJftkgYvH8HWG_B108-bF0Km9kTfh2Xycw0'
-    }
-};
 
-/**
- * Base URL for accessing movie poster images.
- */
-const posterBaseUrl = 'https://image.tmdb.org/t/p/original';
 
 // Easier for Visual Studio to work with:
 /**
@@ -26,13 +11,12 @@ const posterBaseUrl = 'https://image.tmdb.org/t/p/original';
  * @property {string} release_date - The release date of the movie, formatted as 'YYYY-MM-DD'.
  */
 
-
 /**
  * Fetch details for a specific movie by ID.
  * @param {number} movieId - The ID of the movie to fetch details for.
  * @param {boolean} videos - Whether to include video details.
  * @param {boolean} credits - Whether to include credit details.
- * @returns {Promise<any>} An object containing movie details or null if an error occurred.
+ * @returns {Promise<MovieDetails>} An object containing movie details or null if an error occurred.
  */
 const fetchMovieDetails = async (movieId, videos = false, credits = false) => {
     try {
@@ -41,14 +25,14 @@ const fetchMovieDetails = async (movieId, videos = false, credits = false) => {
         if (credits) appendToResponse.push('credits');
         const appendQuery = appendToResponse.length ? `?append_to_response=${appendToResponse.join(',')}` : '';
 
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}${appendQuery}`, options);
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}${appendQuery}`, apiOptions);
         if (!response.ok) {
             throw new Error(`Failed to fetch movie details: ${response.status}`);
         }
         const data = await response.json();
 
         const director = credits ? data.credits.crew.find(person => person.job === 'Director')?.name || 'Unknown' : 'N/A';
-        const cast = credits ? data.credits.cast.slice(0, 5).map(actor => actor.name).join(', ') : 'N/A';
+        const cast = credits ? data.credits.cast.slice(0, 10).map(actor => actor.name).join(', ') : 'N/A';
         const trailer = videos ? data.videos.results.find(video => video.type === 'Trailer')?.key || 'No Trailer' : 'N/A';
         const posterUrl = data.poster_path ? `${posterBaseUrl}${data.poster_path}` : 'No Poster Available';
 
@@ -77,7 +61,7 @@ const fetchMovieDetails = async (movieId, videos = false, credits = false) => {
  */
 const fetchMovies = async (url, category) => {
     try {
-        const response = await fetch(url, options);
+        const response = await fetch(url, apiOptions);
         if (!response.ok) {
             throw new Error(`Failed to fetch ${category} movies: ${response.status}`);
         }
