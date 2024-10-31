@@ -13,7 +13,7 @@ const options = {
 /**
  * Base URL for accessing movie poster images.
  */
-const posterBaseUrl = 'https://image.tmdb.org/t/p/w500';
+const posterBaseUrl = 'https://image.tmdb.org/t/p/original';
 
 // Easier for Visual Studio to work with:
 /**
@@ -30,19 +30,26 @@ const posterBaseUrl = 'https://image.tmdb.org/t/p/w500';
 /**
  * Fetch details for a specific movie by ID.
  * @param {number} movieId - The ID of the movie to fetch details for.
+ * @param {boolean} videos - Whether to include video details.
+ * @param {boolean} credits - Whether to include credit details.
  * @returns {Promise<any>} An object containing movie details or null if an error occurred.
  */
-const fetchMovieDetails = async (movieId) => {
+const fetchMovieDetails = async (movieId, videos = false, credits = false) => {
     try {
-        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?append_to_response=credits,videos`, options);
+        let appendToResponse = [];
+        if (videos) appendToResponse.push('videos');
+        if (credits) appendToResponse.push('credits');
+        const appendQuery = appendToResponse.length ? `?append_to_response=${appendToResponse.join(',')}` : '';
+
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}${appendQuery}`, options);
         if (!response.ok) {
             throw new Error(`Failed to fetch movie details: ${response.status}`);
         }
         const data = await response.json();
 
-        const director = data.credits.crew.find(person => person.job === 'Director')?.name || 'Unknown';
-        const cast = data.credits.cast.slice(0, 5).map(actor => actor.name).join(', ');
-        const trailer = data.videos.results.find(video => video.type === 'Trailer')?.key || 'No Trailer';
+        const director = credits ? data.credits.crew.find(person => person.job === 'Director')?.name || 'Unknown' : 'N/A';
+        const cast = credits ? data.credits.cast.slice(0, 5).map(actor => actor.name).join(', ') : 'N/A';
+        const trailer = videos ? data.videos.results.find(video => video.type === 'Trailer')?.key || 'No Trailer' : 'N/A';
         const posterUrl = data.poster_path ? `${posterBaseUrl}${data.poster_path}` : 'No Poster Available';
 
         return {
@@ -53,7 +60,7 @@ const fetchMovieDetails = async (movieId) => {
             overview: data.overview,
             rating: data.vote_average,
             poster: posterUrl,
-            trailer: `https://www.youtube.com/watch?v=${trailer}`,
+            trailer: videos && trailer !== 'No Trailer' ? `https://www.youtube.com/watch?v=${trailer}` : 'No Trailer',
             release_date: data.release_date || 'Unknown'
         };
     } catch (error) {
@@ -128,13 +135,6 @@ const fetchPremiereMovies = async () => {
 };
 
 // Expose functions globally so they can be called from HTML
-window.fetchUpcomingMovies = fetchUpcomingMovies;
-window.fetchTopRatedMovies = fetchTopRatedMovies;
-window.fetchPopularMovies = fetchPopularMovies;
-window.fetchPremiereMovies = fetchPremiereMovies;
-
-
-
 /**
  * MovieList
  * Fetch action movies.
@@ -319,3 +319,9 @@ const fetch10Movies = async () => {
 
 window.fetch5Movies = fetch5Movies;
 window.fetch10Movies = fetch10Movies;
+window.fetchMovieDetails = fetchMovieDetails;
+
+window.fetchUpcomingMovies = fetchUpcomingMovies;
+window.fetchTopRatedMovies = fetchTopRatedMovies;
+window.fetchPopularMovies = fetchPopularMovies;
+window.fetchPremiereMovies = fetchPremiereMovies;
