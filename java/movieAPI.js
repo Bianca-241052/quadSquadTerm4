@@ -1,5 +1,3 @@
-
-
 // Easier for Visual Studio to work with:
 /**
  * @typedef {Object} MovieDetails
@@ -82,6 +80,7 @@ const fetchMovies = async (url, category) => {
     }
 };
 
+
 /**
  * Fetch upcoming movies.
  * @returns {Promise<Array<MovieDetails>>} An array of upcoming movie details.
@@ -119,6 +118,9 @@ const fetchPremiereMovies = async () => {
 };
 
 // Expose functions globally so they can be called from HTML
+
+
+
 /**
  * MovieList
  * Fetch action movies.

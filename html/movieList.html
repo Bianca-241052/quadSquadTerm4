@@ -55,55 +55,66 @@
     <section class="section1">
         <div class="main-container fluid-container">
             <div class="fluid-container main-content-body mt-4">
-                
-                <div class="home">
-                    <button class="btn btn-secondary" type="button" onclick="window.toggleCategory('all')">Home</button>                       
+                <!-- Categories -->
+
+                <div class="flexContainer1">
+
+                    <div class="home">
+                        <button class="btn btn-secondary" type="button" onclick="window.toggleCategory('all')">Home</button>                       
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Genre</button>
+                        <ul class="dropdown-menu">                                           
+                            <li><ul id="allButton" class="dropdown-item" onclick="window.toggleGenre('all')">All Genres</ul></li>
+                            <li><ul id="actionButton" class="dropdown-item" onclick="window.toggleGenre('action')">Action</ul></li>
+                            <li><ul id="animationButton" class="dropdown-item" onclick="window.toggleGenre('animation')">Animation</ul></li>
+                            <li><ul id="biographyButton" class="dropdown-item" onclick="window.toggleGenre('biography')">Biography</ul></li>
+                            <li><ul id="crimeButton" class="dropdown-item" onclick="window.toggleGenre('crime')">Crime</ul></li>
+                            <li><ul id="documentaryButton" class="dropdown-item" onclick="window.toggleGenre('documentary')">Documentary</ul></li>
+                            <li><ul id="dramaButton" class="dropdown-item" onclick="window.toggleGenre('drama')">Drama</ul></li>
+                            <li><ul id="fantasyButton" class="dropdown-item" onclick="window.toggleGenre('fantasy')">Fantasy</ul></li>
+                            <li><ul id="horrorButton" class="dropdown-item" onclick="window.toggleGenre('horror')">Horror</ul></li>
+                            <li><ul id="sci-fiButton" class="dropdown-item" onclick="window.toggleGenre('sci-Fi')">Sci-Fi</ul></li>
+                            <li><ul id="thrillerButton" class="dropdown-item" onclick="window.toggleGenre('thriller')">Thriller</ul></li>
+                            
+                        </ul>
+                    </div>
+    
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Year
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><ul id="allButton" class="dropdown-item" onclick="window.toggleYear('all')">All Years</ul></li>
+                            <li><ul id="1970Button" class="dropdown-item" onclick="window.toggleYear('1970-1979')">1970-1979</ul></li>
+                            <li><ul id="1980Button" class="dropdown-item" onclick="window.toggleYear('1980-1989')">1980-1989</ul></li>
+                            <li><ul id="1990Button" class="dropdown-item" onclick="window.toggleYear('1990-1999')">1990-1999</ul></li>
+                            <li><ul id="2000Button" class="dropdown-item" onclick="window.toggleYear('2000-2009')">2000-2009</ul></li>
+                            <li><ul id="2010Button" class="dropdown-item" onclick="window.toggleYear('2010-2019')">2010-2019</ul></li>
+                            <li><ul id="2020Button" class="dropdown-item" onclick="window.toggleYear('2020-2024')">2020-2024</ul></li>
+                        </ul>
+                    </div>
+    
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          IMDB Score
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><ul id="allButton" class="dropdown-item" onclick="window.toggleRating('all')">All Ratings</ul></li>
+                            <li><ul id="5Button" class="dropdown-item" onclick="window.toggleRating('0-5')">0-5</ul></li>
+                            <li><ul id="10Button" class="dropdown-item" onclick="window.toggleRating('6-10')">6-10</ul></li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Genre</button>
-                    <ul class="dropdown-menu">                                           
-                        <li><ul id="allButton" class="dropdown-item" onclick="window.toggleGenre('all')">All Genres</ul></li>
-                        <li><ul id="actionButton" class="dropdown-item" onclick="window.toggleGenre('action')">Action</ul></li>
-                        <li><ul id="animationButton" class="dropdown-item" onclick="window.toggleGenre('animation')">Animation</ul></li>
-                        <li><ul id="biographyButton" class="dropdown-item" onclick="window.toggleGenre('biography')">Biography</ul></li>
-                        <li><ul id="crimeButton" class="dropdown-item" onclick="window.toggleGenre('crime')">Crime</ul></li>
-                        <li><ul id="documentaryButton" class="dropdown-item" onclick="window.toggleGenre('documentary')">Documentary</ul></li>
-                        <li><ul id="dramaButton" class="dropdown-item" onclick="window.toggleGenre('drama')">Drama</ul></li>
-                        <li><ul id="fantasyButton" class="dropdown-item" onclick="window.toggleGenre('fantasy')">Fantasy</ul></li>
-                        <li><ul id="horrorButton" class="dropdown-item" onclick="window.toggleGenre('horror')">Horror</ul></li>
-                        <li><ul id="sci-fiButton" class="dropdown-item" onclick="window.toggleGenre('sci-Fi')">Sci-Fi</ul></li>
-                        <li><ul id="thrillerButton" class="dropdown-item" onclick="window.toggleGenre('thriller')">Thriller</ul></li>
-                        
-                    </ul>
-                </div>
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Year
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><ul id="allButton" class="dropdown-item" onclick="window.toggleYear('all')">All Years</ul></li>
-                        <li><ul id="1970Button" class="dropdown-item" onclick="window.toggleYear('1970-1979')">1970-1979</ul></li>
-                        <li><ul id="1980Button" class="dropdown-item" onclick="window.toggleYear('1980-1989')">1980-1989</ul></li>
-                        <li><ul id="1990Button" class="dropdown-item" onclick="window.toggleYear('1990-1999')">1990-1999</ul></li>
-                        <li><ul id="2000Button" class="dropdown-item" onclick="window.toggleYear('2000-2009')">2000-2009</ul></li>
-                        <li><ul id="2010Button" class="dropdown-item" onclick="window.toggleYear('2010-2019')">2010-2019</ul></li>
-                        <li><ul id="2020Button" class="dropdown-item" onclick="window.toggleYear('2020-2024')">2020-2024</ul></li>
-                    </ul>
-                </div>
-
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      IMDB Score
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><ul id="allButton" class="dropdown-item" onclick="window.toggleRating('all')">All Ratings</ul></li>
-                        <li><ul id="5Button" class="dropdown-item" onclick="window.toggleRating('0-5')">0-5</ul></li>
-                        <li><ul id="10Button" class="dropdown-item" onclick="window.toggleRating('6-10')">6-10</ul></li>
-                    </ul>
-                </div>
-            </div>
+    
+                <!-- Select a Movie -->
+                <!-- <div class="container-fluid mt-5 movie-rows">
+                    <div id="movieCardsRow" class="row"> -->
+                        <!-- Movie Cards will be dynamically generated here -->
+                    <!-- </div>
+                </div> -->
 
                 <!-- Select a Movie -->
                 <div class="container-fluid mt-5 movie-rows">
@@ -158,7 +169,7 @@
     </nav>
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script type="module" src="../java/MovieList.js"></script>
+    <script type="module" src="../java/MovieList2.js"></script>
     <script type="module" src="../java/logout.js"></script>
     <script  type="module" src="../java/firebase.js"></script>
 </div>    
