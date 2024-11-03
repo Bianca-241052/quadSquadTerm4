@@ -116,7 +116,3 @@ window.addEventListener('DOMContentLoaded', ()=>{
 })
 
 
-document.querySelector('.toggle_btn').addEventListener('click', function() {
-  const dropdownMenu = document.querySelector('.dropdown-menu');
-  dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
-});
