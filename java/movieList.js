@@ -291,6 +291,12 @@ window.toggleCategory = toggleCategory;
 
 /* Genre Filter*/
 
+/**
+ *  * Loads movies based on the selected category and displays them as cards. 
+ * @param {string} genre - The category of movies to load (e.g., 'popular', 'inTheatres').
+ * @returns {void}
+ */
+
 function toggleGenre(genre) {
     const genreItems = document.querySelectorAll('.dropdown-item');
     genreItems.forEach(item => item.classList.remove('active')); // Optional: If you want to indicate the active genre
@@ -298,38 +304,38 @@ function toggleGenre(genre) {
     // const itemId = genre + 'Item';
     // document.getElementById(itemId).classList.add('active');
 
-    const genreCardRow = document.getElementById('movieCardsRow');
-    genreCardRow.innerHTML = ''; // Clear previous cards
+    const genreCardsRow = document.getElementById('movieContentContainer');
+    genreCardsRow.innerHTML = ''; // Clear previous cards
 
     switch (genre) {
-        case 'Action':
+        case 'action':
             window.fetchActionMovies().then(movies => addMoviesToRow('Action', movies));
             break;
-        case 'Animation':
+        case 'animation':
             window.fetchAnimationMovies().then(movies => addMoviesToRow('Animation', movies));
             break;
-        case 'Biography':
+        case 'biography':
             window.fetchBiographyMovies().then(movies => addMoviesToRow('Biography', movies));
             break;
-        case 'Crime':
+        case 'crime':
             window.fetchCrimeMovies().then(movies => addMoviesToRow('Crime', movies));
             break;
-        case 'Documentary':
+        case 'documentary':
             window.fetchDocumentaryMovies().then(movies => addMoviesToRow('Documentary', movies));
             break;
-        case 'Drama':
+        case 'drama':
             window.fetchDramaMovies().then(movies => addMoviesToRow('Drama', movies));
             break;
-        case 'Fantasy':
+        case 'fantasy':
             window.fetchFantasyMovies().then(movies => addMoviesToRow('Fantasy', movies));
             break;
-        case 'Horror':
+        case 'horror':
             window.fetchHorrorMovies().then(movies => addMoviesToRow('Horror', movies));
             break;
-        case 'Sci-Fi':
+        case 'sci-Fi':
             window.fetchSciFiMovies().then(movies => addMoviesToRow('Sci-Fi', movies));
             break;
-        case 'Thriller':
+        case 'thriller':
             window.fetchThrillerMovies().then(movies => addMoviesToRow('Thriller', movies));
             break;
         default:
@@ -347,35 +353,8 @@ function toggleGenre(genre) {
     }
 }
 
-/**
- * Loads movies based on the selected category and displays them as cards. 
- * @param {string} title - The title to show for the row.
- * @param {MovieDetails[]} movies - The Movie array containing movie objects and its details.
- * @returns {void}
- */
-function addMoviesToRow(title, movies) {
-    // Create a title element
-    const titleElement = document.createElement('h3');
-    titleElement.className = 'category-title pb-4 mb-4';
-    titleElement.textContent = title;
-
-    // Create a new row for the movies
-    const newMovieCardsRow = document.createElement('div');
-    newMovieCardsRow.className = 'row movie-cards-row list-container';
-
-    // Populate the new row with the movies.
-    movies.slice(0, 4).forEach(movie => {
-        const newMovieCard = createMovieCard(movie, title === 'Upcoming');
-        newMovieCardsRow.appendChild(newMovieCard);
-    });
-
-    // Get the container and add the title and the movie row
-    const mainContainer = document.getElementById('movieCardsRow');
-    mainContainer.appendChild(titleElement);
-    mainContainer.appendChild(newMovieCardsRow);
-}
-
-window.toggleGenre('All');
+/* Genre */
+toggleGenre('all');
 window.toggleGenre = toggleGenre;
 
 
@@ -388,8 +367,8 @@ function toggleYear(year) {
     // const itemId = genre + 'Item';
     // document.getElementById(itemId).classList.add('active');
 
-    const genreCardRow = document.getElementById('movieCardsRow');
-    genreCardRow.innerHTML = ''; // Clear previous cards
+    const genreCardsRow = document.getElementById('movieContentContainer');
+    genreCardsRow.innerHTML = ''; // Clear previous cards
 
     switch (year) {
         case '1970-1979':
@@ -421,35 +400,8 @@ function toggleYear(year) {
     }
 }
 
-/**
- * Loads movies based on the selected category and displays them as cards. 
- * @param {string} title - The title to show for the row.
- * @param {MovieDetails[]} movies - The Movie array containing movie objects and its details.
- * @returns {void}
- */
-function addMoviesToRow(title, movies) {
-    // Create a title element
-    const titleElement = document.createElement('h3');
-    titleElement.className = 'category-title pb-4 mb-4';
-    titleElement.textContent = title;
-
-    // Create a new row for the movies
-    const newMovieCardsRow = document.createElement('div');
-    newMovieCardsRow.className = 'row movie-cards-row list-container';
-
-    // Populate the new row with the movies.
-    movies.slice(0, 4).forEach(movie => {
-        const newMovieCard = createMovieCard(movie, title === 'Upcoming');
-        newMovieCardsRow.appendChild(newMovieCard);
-    });
-
-    // Get the container and add the title and the movie row
-    const mainContainer = document.getElementById('movieCardsRow');
-    mainContainer.appendChild(titleElement);
-    mainContainer.appendChild(newMovieCardsRow);
-}
-
-window.toggleYear('All');
+/* Year */
+toggleYear('all');
 window.toggleYear = toggleYear;
 
 /* Rating Filter*/
@@ -461,8 +413,8 @@ function toggleRating(rating) {
     // const itemId = genre + 'Item';
     // document.getElementById(itemId).classList.add('active');
 
-    const genreCardRow = document.getElementById('movieCardsRow');
-    genreCardRow.innerHTML = ''; // Clear previous cards
+    const genreCardsRow = document.getElementById('movieContentContainer');
+    genreCardsRow.innerHTML = ''; // Clear previous cards
 
     switch (rating) {
         case '0-5':
@@ -478,36 +430,6 @@ function toggleRating(rating) {
     }
 }
 
-/**
- * Loads movies based on the selected category and displays them as cards. 
- * @param {string} title - The title to show for the row.
- * @param {MovieDetails[]} movies - The Movie array containing movie objects and its details.
- * @returns {void}
- */
-function addMoviesToRow(title, movies) {
-    // Create a title element
-    const titleElement = document.createElement('h3');
-    titleElement.className = 'category-title pb-4 mb-4';
-    titleElement.textContent = title;
-
-    // Create a new row for the movies
-    const newMovieCardsRow = document.createElement('div');
-    newMovieCardsRow.className = 'row movie-cards-row list-container';
-
-    // Populate the new row with the movies.
-    movies.slice(0, 4).forEach(movie => {
-        const newMovieCard = createMovieCard(movie, title === 'Upcoming');
-        newMovieCardsRow.appendChild(newMovieCard);
-    });
-
-    // Get the container and add the title and the movie row
-    const mainContainer = document.getElementById('movieCardsRow');
-    mainContainer.appendChild(titleElement);
-    mainContainer.appendChild(newMovieCardsRow);
-}
-
-window.toggleRating('All');
+/* Rating */
+toggleRating('all');
 window.toggleRating = toggleRating;
-
-
-
