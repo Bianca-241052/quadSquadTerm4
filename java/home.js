@@ -23,11 +23,6 @@ import { addToWatchList, removeFromWatchList, isInWatchList, getWatchList, /*ren
  */
 
 
-/**
- * Controls the state of the carousel, either playing or paused.
- */
-let isPlaying = true;
-
 /** @type {MovieDetails[]} */
 let globalTopThreeMovies = [];
 
@@ -127,7 +122,9 @@ function createCarouselItem(movie, isActive) {
         watchLaterButton.textContent = inWatchList ? 'Remove' : '+ Watch list';
         watchLaterButton.setAttribute('data-id', movie.id);
         
-        watchLaterButton.onclick = function () {
+        watchLaterButton.onclick = function (event) {
+            event.stopPropagation();
+
             if (isInWatchList(movie.id)) {
                 removeFromWatchList(movie.id);
                 watchLaterButton.textContent = '+ Watch list';
@@ -172,6 +169,10 @@ function createMovieCard(movie, showFullDate = false) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card col-sm-3';
 
+    cardDiv.addEventListener('click', () => {
+        window.location.href = `/html/individual.html?id=${movie.id}`;
+    });
+
     const img = document.createElement('img');
     img.src = movie.poster;
     img.className = 'card-img-top';
@@ -214,7 +215,9 @@ function createMovieCard(movie, showFullDate = false) {
     cardLink.textContent = inWatchList ? 'Remove' : '+ Watch list';
     cardLink.setAttribute('data-id', movie.id);
 
-    cardLink.onclick = function() {
+    cardLink.onclick = function(event) {
+
+        event.stopPropagation();
         if (isInWatchList(movie.id)) {
             removeFromWatchList(movie.id);
             cardLink.classList.remove('remove');
@@ -375,3 +378,35 @@ toggleCategory('all');
 window.toggleCategory = toggleCategory;
 
 
+//homepage intro splash//
+
+let HomeInIntro = document.querySelector('.home-intro');
+let HomeInLogo = document.querySelector('.home-intro-logo-header');
+let HomeInSpan = document.querySelectorAll('.home-intro-text');
+
+window.addEventListener('DOMContentLoaded', ()=>{
+
+  setTimeout(()=>{
+
+    HomeInSpan.forEach((span, idx)=>{
+      setTimeout(()=>{
+        span.classList.add('active');
+      }, (idx + 1) * 400)
+    });
+
+    setTimeout(()=>{
+      HomeInSpan.forEach((span, idx)=>{
+
+        setTimeout(()=>{
+          span.classList.remove('active');
+          span.classList.add('fade');
+        }, (idx + 1) * 50)
+      })
+    }, 2700);
+
+    setTimeout(()=>{
+      HomeInIntro.style.top = '-1000vh';
+    }, 2300)
+
+  }, 700);//make the start shorter//
+})
