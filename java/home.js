@@ -405,13 +405,8 @@ window.addEventListener('DOMContentLoaded', ()=>{
     }, 2700);
 
     setTimeout(()=>{
-      HomeInIntro.style.top = '-100vh';
-    }, 2800)
-
-    
-    setTimeout(()=> {
-        HomeInIntro.style.display = 'none';
-      }, 2800);
+      HomeInIntro.style.top = '-1000vh';
+    }, 2300)
 
   }, 700);//make the start shorter//
 })
