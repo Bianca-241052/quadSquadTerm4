@@ -410,3 +410,70 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
   }, 700);//make the start shorter//
 })
+
+//Iwan//
+/**
+ *  * Loads movies based on the selected category and displays them as cards. 
+ * @param {string} genre - The category of movies to load (e.g., 'popular', 'inTheatres').
+ * @returns {void}
+ */
+
+function toggleGenre(genre) {
+    const genreItems = document.querySelectorAll('.dropdown-item');
+    genreItems.forEach(item => item.classList.remove('active')); // Optional: If you want to indicate the active genre
+
+    // const itemId = genre + 'Item';
+    // document.getElementById(itemId).classList.add('active');
+
+    const genreCardsRow = document.getElementById('movieContentContainer');
+    genreCardsRow.innerHTML = ''; // Clear previous cards
+
+    switch (genre) {
+        case 'action':
+            window.fetchActionMovies().then(movies => addMoviesToRow('Action', movies));
+            break;
+        case 'animation':
+            window.fetchAnimationMovies().then(movies => addMoviesToRow('Animation', movies));
+            break;
+        case 'biography':
+            window.fetchBiographyMovies().then(movies => addMoviesToRow('Biography', movies));
+            break;
+        case 'crime':
+            window.fetchCrimeMovies().then(movies => addMoviesToRow('Crime', movies));
+            break;
+        case 'documentary':
+            window.fetchDocumentaryMovies().then(movies => addMoviesToRow('Documentary', movies));
+            break;
+        case 'drama':
+            window.fetchDramaMovies().then(movies => addMoviesToRow('Drama', movies));
+            break;
+        case 'fantasy':
+            window.fetchFantasyMovies().then(movies => addMoviesToRow('Fantasy', movies));
+            break;
+        case 'horror':
+            window.fetchHorrorMovies().then(movies => addMoviesToRow('Horror', movies));
+            break;
+        case 'sci-Fi':
+            window.fetchSciFiMovies().then(movies => addMoviesToRow('Sci-Fi', movies));
+            break;
+        case 'thriller':
+            window.fetchThrillerMovies().then(movies => addMoviesToRow('Thriller', movies));
+            break;
+        default:
+            window.fetchActionMovies().then(movies => addMoviesToRow('Action', movies));
+            window.fetchAnimationMovies().then(movies => addMoviesToRow('Animation', movies));
+            window.fetchBiographyMovies().then(movies => addMoviesToRow('Biography', movies));
+            window.fetchCrimeMovies().then(movies => addMoviesToRow('Crime', movies));
+            window.fetchDocumentaryMovies().then(movies => addMoviesToRow('Documentary', movies));
+            window.fetchDramaMovies().then(movies => addMoviesToRow('Drama', movies));
+            window.fetchFantasyMovies().then(movies => addMoviesToRow('Fantasy', movies));
+            window.fetchHorrorMovies().then(movies => addMoviesToRow('Horror', movies));
+            window.fetchSciFiMovies().then(movies => addMoviesToRow('Sci-Fi', movies));
+            window.fetchThrillerMovies().then(movies => addMoviesToRow('Thriller', movies));
+            break;
+    }
+}
+
+/* Genre */
+toggleGenre('all');
+window.toggleGenre = toggleGenre;

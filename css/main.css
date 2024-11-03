@@ -1612,10 +1612,6 @@ body.mainPage {
 
 /*MovieList updates*/
 
-.dropdown {
-  
-}
-
 .dropdown button {
   color: #ffffff;
   background-color:#9d41f2;
@@ -1627,8 +1623,37 @@ body.mainPage {
   background-color:#AEF504;
 }
 
-.dropdown-item {
+.home .btn .btn-secondary{
+  background-color:#9d41f2 !important;
+}
 
+.home button {
+  color: #ffffff;
+  background-color:#9d41f2;
+  margin-right: 10px;
+}
+
+.home button:hover {
+  color:#000000;
+  background-color:#AEF504;
+}
+
+.dropdown-item {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
+}
+
+.dropdown-item :active {
+  background:#9d41f2;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-style: normal;
+  line-height: normal;
 }
 
 .flexContainer1 {
