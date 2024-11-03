@@ -95,19 +95,19 @@
             </div>
 
             <!-- Categories -->
-            <div class="categories-container pt-4 pb-3 list-container">
-                <button class="category-button">Action</button>
-                <button class="category-button">Adventure</button>
-                <button class="category-button">Animation</button>
-                <button class="category-button">Biography</button>
-                <button class="category-button">Crime</button>
-                <button class="category-button">Documentary</button>
-                <button class="category-button">Drama</button>
-                <button class="category-button">Fantasy</button>
-                <button class="category-button">Horror</button>
-                <button class="category-button">Sci-Fi</button>
-                <button class="category-button">Thirller</button> 
-            </div>
+            <div class="categories-container pt-4 pb-3 list-container">                
+                <button id="allButton" class="category-button" onclick="window.toggleGenre('all')">All</button>
+                <button id="actionButton" class="category-button" onclick="window.toggleGenre('action')">Action</button>
+                <button id="animationButton" class="category-button" onclick="window.toggleGenre('animation')">Animation</button>
+                <button id="biographyButton" class="category-button" onclick="window.toggleGenre('biography')">Biography</button>
+                <button id="crimeButton" class="category-button" onclick="window.toggleGenre('crime')">Crime</button>
+                <button id="documentaryButton" class="category-button" onclick="window.toggleGenre('documentary')">Documentary</button>
+                <button id="dramaButton" class="category-button" onclick="window.toggleGenre('drama')">Drama</button>
+                <button id="fantasyButton" class="category-button" onclick="window.toggleGenre('fantasy')">Fantasy</button>
+                <button id="horrorButton" class="category-button" onclick="window.toggleGenre('horror')">Horror</button>
+                <button id="sci-fiButton" class="category-button" onclick="window.toggleGenre('sci-Fi')">Sci-Fi</button>
+                <button id="thrillerButton" class="category-button" onclick="window.toggleGenre('thriller')">Thriller</button>                
+        </div>
 
             <!-- Select a Movie -->
             <div class="container-fluid mt-5 movie-rows">
