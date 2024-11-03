@@ -402,11 +402,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
           span.classList.add('fade');
         }, (idx + 1) * 50)
       })
-    }, 2000);
+    }, 2700);
 
     setTimeout(()=>{
       HomeInIntro.style.top = '-100vh';
-    }, 2300)
+    }, 2800)
 
     
     setTimeout(()=> {
