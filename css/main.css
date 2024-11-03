@@ -124,81 +124,170 @@ body {
 
 
 /* NAV */
+li {
+  list-style: none;
+}
 
-nav {
-  margin: 0;
-  font-family: Arial, sans-serif;
+.navbar .links a {
+  text-decoration: none;
+  color: #fff !important;
+  font-size: 24px;
+}
+
+.navbar .links a:hover {
+  color: orange !important;
+}
+/*header*/
+header {
+  position: relative;
+  padding: 0 2rem;
 }
 
 .navbar {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 120px; 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #8c8c8c80;
-  padding: 10px 55px;
+  background-color: rgba(25, 25, 50, 0.8);
+  color: #fff;
+  z-index: 10; 
+}
+.navbar .logo img {
+  width: 300px; 
+  height: auto; 
+  margin-left: 20px;
 }
 
-.navbar .logo {
+.navbar .links{
   display: flex;
-  align-items: center;
+  gap: 2rem;
+}
+
+.navbar .link.active {
+  color: orange !important; 
+  font-weight: 700; 
+  
+}
+
+.navbar .toggle_btn {
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; 
   margin-right: 20px;
 }
 
-.navbar .logo img {
-  width: auto;
-  height: 60px;
-}
-
-.nav-links {
+.navbar .icons{
   display: flex;
-  gap: 20px; /* Space between links */
+  gap: 2rem;
 }
 
-.nav-links .nav-link {
-  color: white;
+
+.ENG{
+  background-color: orange;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 20px;
+  transition: background-color 0.3s ease; 
+}
+
+.ENG:hover {
+  scale: 1.05;
+  background-color: darkorange; 
+}
+
+.navLogout {
+  background-color: orange;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 20px;
+  transition: background-color 0.3s ease; 
+  margin-right: 30px;
+}
+
+.navLogout:hover {
+  scale: 1.05;
+  background-color: darkorange; 
+}
+
+/*dropdown menu*/
+.navbar .dropdown-menu {
+  display: none; /* Hide the dropdown by default */
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  width: 300px;
+  background: rgb(0, 0, 0);
+  border-radius: 5px; /* Optional: to round corners */
+  z-index: 1000; /* Optional: ensures it stays above other content */
+}
+
+.navbar .dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ .navbar .dropdown-menu li {
+  padding: 10px;
+}
+
+ .navbar .dropdown-menu li a {
+  color: #fff; /* Change text color as needed */
   text-decoration: none;
 }
 
-.nav-links .nav-link.active {
-  font-weight: bold;
+.navbar .dropdown-menu li a:hover {
+  color: orange; /* Highlight on hover */
 }
 
-.nav-icons {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+ .navbar .dropdown-menu li button {
+  color: #fff; /* Text color */
+  text-decoration: none; /* Remove underline */
+  display: block; /* Make the entire area clickable */
+  width: 100%; /* Ensure buttons take the full width */
+  text-align: left; /* Align text */
+  padding: 10px; /* Padding for better spacing */
+  background: orange; /* Transparent background */
+  border: none; /* No border for buttons */
+  cursor: pointer; /* Show pointer on hover */
 }
 
-.navIconSearch,
-.navIconProfile {
-  height: auto;
-  color: #ffffff;
-  border: none;
-  background: none;
-  width: 40px;
+.navbar .dropdown-menu li button:hover {
+  background: rgba(255, 255, 255, 0.2); /* Change background on hover */
 }
-
-.language{
-  color: #ffffff;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .nav-links {
-      flex-direction: column; /* Stack links vertically */
-      text-align: center; /* Center text */
-      margin-top: 3em; /* Space between the links and the logo */
+/*responsive design*/
+@media(max-width: 992px){
+  .navbar .links,
+  .navbar .navLogout{
+    display: none;
+  }
+  .navbar .ENG{
+    display: none;
   }
 
-  .nav-icons {
-      justify-content: center; /* Center icons on smaller screens */
-  }
-
-  .nav-icons .language {
-      margin: 0 10px; /* Adjust margin for spacing */
+  .navbar .toggle_btn{
+    display: block;
   }
 }
-    
+
+
+
+
 
 
 
