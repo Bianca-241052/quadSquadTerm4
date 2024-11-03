@@ -1,4 +1,4 @@
-import { addToWatchList, removeFromWatchList, isInWatchList, getWatchList, /*renderWatchList*/ } from './watchlist.js';
+import { addToWatchList, removeFromWatchList, isInWatchList, getWatchList, /*renderWatchList*/ } from './Cookies.js';
 
 /**
     The home.js file provides JavaScript functionality to be used for the Home.html page of a movie streaming application. 
@@ -22,11 +22,6 @@ import { addToWatchList, removeFromWatchList, isInWatchList, getWatchList, /*ren
  * @property {string} release_date - The release date of the movie, formatted as 'YYYY-MM-DD'.
  */
 
-
-/**
- * Controls the state of the carousel, either playing or paused.
- */
-let isPlaying = true;
 
 /** @type {MovieDetails[]} */
 let globalTopThreeMovies = [];
@@ -127,7 +122,9 @@ function createCarouselItem(movie, isActive) {
         watchLaterButton.textContent = inWatchList ? 'Remove' : '+ Watch list';
         watchLaterButton.setAttribute('data-id', movie.id);
         
-        watchLaterButton.onclick = function () {
+        watchLaterButton.onclick = function (event) {
+            event.stopPropagation();
+
             if (isInWatchList(movie.id)) {
                 removeFromWatchList(movie.id);
                 watchLaterButton.textContent = '+ Watch list';
@@ -172,6 +169,10 @@ function createMovieCard(movie, showFullDate = false) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card col-sm-3';
 
+    cardDiv.addEventListener('click', () => {
+        window.location.href = `/html/individual.html?id=${movie.id}`;
+    });
+
     const img = document.createElement('img');
     img.src = movie.poster;
     img.className = 'card-img-top';
@@ -214,7 +215,9 @@ function createMovieCard(movie, showFullDate = false) {
     cardLink.textContent = inWatchList ? 'Remove' : '+ Watch list';
     cardLink.setAttribute('data-id', movie.id);
 
-    cardLink.onclick = function() {
+    cardLink.onclick = function(event) {
+
+        event.stopPropagation();
         if (isInWatchList(movie.id)) {
             removeFromWatchList(movie.id);
             cardLink.classList.remove('remove');
@@ -399,16 +402,11 @@ window.addEventListener('DOMContentLoaded', ()=>{
           span.classList.add('fade');
         }, (idx + 1) * 50)
       })
-    }, 2000);
+    }, 2700);
 
     setTimeout(()=>{
-      HomeInIntro.style.top = '-100vh';
+      HomeInIntro.style.top = '-1000vh';
     }, 2300)
-
-    
-    setTimeout(()=> {
-        HomeInIntro.style.display = 'none';
-      }, 2800);
 
   }, 700);//make the start shorter//
 })
