@@ -135,7 +135,7 @@ li {
 }
 
 .navbar .links a:hover {
-  color: orange !important;
+  color: #AEF504 !important;
 }
 /*header*/
 header {
@@ -144,7 +144,7 @@ header {
 }
 
 .navbar {
-  position: fixed; 
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100vw; 
@@ -168,7 +168,7 @@ header {
 }
 
 .navbar .link.active {
-  color: orange !important; 
+  color: #9d41f2 !important; 
   font-weight: 700; 
   
 }
@@ -190,7 +190,7 @@ header {
 
 
 .ENG{
-  background-color: orange;
+  background-color: #9d41f2;
   color: #fff;
   padding: 0.5rem 1rem;
   border: none;
@@ -203,11 +203,11 @@ header {
 
 .ENG:hover {
   scale: 1.05;
-  background-color: darkorange; 
+  background-color: #AEF504; 
 }
 
 .navLogout {
-  background-color: orange;
+  background-color: #9d41f2;
   color: #fff;
   padding: 0.5rem 1rem;
   border: none;
@@ -221,7 +221,7 @@ header {
 
 .navLogout:hover {
   scale: 1.05;
-  background-color: darkorange; 
+  background-color: #AEF504; 
 }
 
 /*dropdown menu*/
@@ -252,7 +252,7 @@ header {
 }
 
 .navbar .dropdown-menu li a:hover {
-  color: orange; /* Highlight on hover */
+  color: #9d41f2; /* Highlight on hover */
 }
 
  .navbar .dropdown-menu li button {
@@ -262,7 +262,7 @@ header {
   width: 100%; /* Ensure buttons take the full width */
   text-align: left; /* Align text */
   padding: 10px; /* Padding for better spacing */
-  background: orange; /* Transparent background */
+  background: #9d41f2; /* Transparent background */
   border: none; /* No border for buttons */
   cursor: pointer; /* Show pointer on hover */
 }
