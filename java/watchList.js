@@ -27,6 +27,10 @@ function createWatchListCard(movie) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card col-sm-3';
 
+    cardDiv.addEventListener('click', () => {
+        window.location.href = `/html/individual.html?id=${movie.id}`;
+    });
+
     const img = document.createElement('img');
     img.src = movie.poster;
     img.className = 'card-img-top';
@@ -56,7 +60,8 @@ function createWatchListCard(movie) {
     removeButton.textContent = 'Remove';
     removeButton.setAttribute('data-id', movie.id);
 
-    removeButton.onclick = function () {
+    removeButton.onclick = function (event) {
+        event.stopPropagation();
         removeFromWatchList(movie.id);
         loadWatchList(); // Reload the watchlist after removal
     };

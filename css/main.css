@@ -5,6 +5,7 @@ body {
 /* Juliette CSS */
 
 .indivContainer {
+  margin-top: 6em;
   display: flex;
   padding: 3em 4em;
   gap: 100px;
@@ -46,6 +47,26 @@ body {
   height: 100%;
   width: calc(60% - 100px);
   justify-content: center;
+}
+
+#movieDirector{
+  font-weight: 100;
+}
+
+#movieCast{
+  font-weight: 100;
+}
+
+#movieOverview{
+  font-weight: 100;
+}
+
+#movieRating{
+  font-weight: 100;
+}
+
+.bold{
+  font-weight: bold;
 }
 
 .playButton {

@@ -172,6 +172,10 @@ function createMovieCard(movie, showFullDate = false) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card col-sm-3';
 
+    cardDiv.addEventListener('click', () => {
+        window.location.href = `/html/individual.html?id=${movie.id}`;
+    });
+
     const img = document.createElement('img');
     img.src = movie.poster;
     img.className = 'card-img-top';
@@ -214,19 +218,23 @@ function createMovieCard(movie, showFullDate = false) {
     cardLink.textContent = inWatchList ? 'Remove' : '+ Watch list';
     cardLink.setAttribute('data-id', movie.id);
 
-    cardLink.onclick = function() {
-        if (isInWatchList(movie.id)) {
-            removeFromWatchList(movie.id);
-            cardLink.classList.remove('remove');
-            cardLink.textContent = '+ Watch list';
-        } else {
-            addToWatchList(movie.id);
-            cardLink.classList.add('remove');
-            cardLink.textContent = 'Remove';
-        }
-        // Update all buttons after adding/removing from watchlist
-        updateWatchListButtons();
-    };
+cardLink.onclick = function(event) {
+    event.stopPropagation();
+    console.log("Watchlist button clicked");
+
+    if (isInWatchList(movie.id)) {
+        console.log("Removing from watchlist");
+        removeFromWatchList(movie.id);
+        cardLink.classList.remove('remove');
+        cardLink.textContent = '+ Watch list';
+    } else {
+        console.log("Adding to watchlist");
+        addToWatchList(movie.id);
+        cardLink.classList.add('remove');
+        cardLink.textContent = 'Remove';
+    }
+    updateWatchListButtons();
+};
 
     // Append all elements to card body and card div
     cardBody.appendChild(cardTitle);
