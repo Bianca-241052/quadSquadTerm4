@@ -61,7 +61,7 @@
          const docRef = doc(db, "users", user.uid);
          setDoc(docRef, userData)
          .then(() => {
-             window.location.href = '../html/home.html';
+             window.location.href = '../index.html';
          })
          .catch((error) => {
              console.error("Error writing document", error);
@@ -89,7 +89,7 @@ signIn?.addEventListener('click', (event)=>{
        showMessage('login is successful', 'signInMessage');
        const user=userCredential.user;
        localStorage.setItem('loggedInUserId', user.uid);
-       window.location.href='../html/home.html';  //change to home.html
+       window.location.href='../index.html';  //change to home.html
    })
    .catch((error)=>{
     const errorCode=error.code;
