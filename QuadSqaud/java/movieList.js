@@ -173,7 +173,7 @@ function createMovieCard(movie, showFullDate = false) {
     cardDiv.className = 'card col-sm-3';
 
     cardDiv.addEventListener('click', () => {
-        window.location.href = `/html/individual.html?id=${movie.id}`;
+        window.location.href = `../html/individual.html?id=${movie.id}`;
     });
 
     const img = document.createElement('img');

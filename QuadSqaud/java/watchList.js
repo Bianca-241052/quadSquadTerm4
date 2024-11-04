@@ -30,7 +30,7 @@ function createWatchListCard(movie) {
 
     //NB!!!!!  juliete //
     cardDiv.addEventListener('click', () => {
-        window.location.href = `/html/individual.html?id=${movie.id}`;
+        window.location.href = `../html/individual.html?id=${movie.id}`;
     });
 
     const img = document.createElement('img');
