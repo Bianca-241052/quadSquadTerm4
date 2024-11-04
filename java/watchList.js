@@ -27,6 +27,8 @@ function createWatchListCard(movie) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card col-sm-3';
 
+
+    //NB!!!!!  juliete //
     cardDiv.addEventListener('click', () => {
         window.location.href = `/html/individual.html?id=${movie.id}`;
     });
@@ -60,6 +62,8 @@ function createWatchListCard(movie) {
     removeButton.textContent = 'Remove';
     removeButton.setAttribute('data-id', movie.id);
 
+
+    //NB!!!!!  juliete //
     removeButton.onclick = function (event) {
         event.stopPropagation();
         removeFromWatchList(movie.id);
