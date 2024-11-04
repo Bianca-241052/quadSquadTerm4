@@ -1526,7 +1526,7 @@ body.mainPage {
   height: 60px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .footer-content {
     flex-direction: column;
     align-items: center;
