@@ -421,8 +421,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
   }, 700);//make the start shorter//
 })
 
-
-/* Genre Filter*/
+/*Iwan Genre Filter*/
 
 /**
  *  * Loads movies based on the selected category and displays them as cards. 
